@@ -154,6 +154,7 @@ static void create_from_location_async_data_free
         g_object_unref(data->session);
     if (data->message != NULL)
         g_object_unref(data->message);
+    g_free(data->uri);
     g_object_unref(data->res);
     g_free(data->volume);
     g_free(data->system);
@@ -1689,6 +1690,7 @@ OsinfoOsVariantList *osinfo_media_get_os_variants(OsinfoMedia *media)
                                  OSINFO_LIST(os_variants),
                                  filter);
     }
+    g_object_unref(filter);
     g_object_unref(os_variants);
     g_list_free(ids);
 
