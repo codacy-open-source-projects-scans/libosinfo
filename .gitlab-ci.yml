@@ -4,12 +4,10 @@ stages:
   - sanity_checks
 
 .multilib: &multilib |
-  dpkg_architecture=$(which dpkg-architecture 2>/dev/null || true)
-  rpm=$(which rpm 2>/dev/null || true)
-  if test -x "$dpkg_architecture"; then
-    multilib=$(dpkg-architecture -q DEB_TARGET_MULTIARCH);
-  elif test -x "$rpm"; then
-    multilib=$(rpm --eval '%{_lib}');
+  if test -d "/usr/lib64"; then
+    multilib=lib64
+  else
+    multilib=lib
   fi
 
 .native-environment: &native-environment |
@@ -32,6 +30,8 @@ stages:
   export PKG_CONFIG_PATH="$VIRT_PREFIX/lib/pkgconfig"
 
 .native_build_job:
+  extends:
+    - .gitlab_native_build_job
   cache:
     paths:
       - ccache
@@ -39,7 +39,8 @@ stages:
   script:
     - *multilib
     - *native-environment
-    - pushd /tmp/
+    - HERE=$PWD
+    - cd /tmp/
     - git clone https://gitlab.com/libosinfo/osinfo-db.git
     - cd osinfo-db
     - mkdir build
@@ -47,30 +48,22 @@ stages:
     - $MAKE -f ../Makefile VPATH=..
     - $MAKE -f ../Makefile VPATH=.. check
     - $MAKE -f ../Makefile VPATH=.. install OSINFO_DB_TARGET="--system"
-    - popd
+    - cd $HERE
     - mkdir build
     - cd build
-    - meson .. . --prefix=$VIRT_PREFIX --werror
+    - meson .. . --prefix=$VIRT_PREFIX --werror || ( cat meson-logs/meson-log.txt ; exit 1)
     - $NINJA
     - $NINJA install
-    - $NINJA test
+    - meson test --print-errorlogs
     - $NINJA dist
     - if test -x /usr/bin/rpmbuild && test "$RPM" != "skip";
       then
         rpmbuild --nodeps --define '_without_mingw 1' -ta meson-dist/*.tar.xz;
       fi
 
-.native_build_job_prebuilt_env:
-  extends:
-    - .native_build_job
-    - .gitlab_native_build_job_prebuilt_env
-
-.native_build_job_local_env:
-  extends:
-    - .native_build_job
-    - .gitlab_native_build_job_local_env
-
 .cross_build_job:
+  extends:
+    - .gitlab_cross_build_job
   cache:
     paths:
       - ccache
@@ -81,18 +74,8 @@ stages:
     - *mingw-environment
     - mkdir build
     - cd build
-    - meson .. . $MESON_OPTS --prefix=$VIRT_PREFIX -Denable-gtk-doc=false -Denable-tests=false -Denable-introspection=disabled -Denable-vala=disabled --werror
+    - meson .. . $MESON_OPTS --prefix=$VIRT_PREFIX -Denable-gtk-doc=false -Denable-tests=false -Denable-introspection=disabled -Denable-vala=disabled --werror || ( cat meson-logs/meson-log.txt ; exit 1)
     - $NINJA
     - $NINJA install
-
-.cross_build_job_prebuilt_env:
-  extends:
-    - .cross_build_job
-    - .gitlab_cross_build_job_prebuilt_env
-
-.cross_build_job_local_env:
-  extends:
-    - .cross_build_job
-    - .gitlab_cross_build_job_local_env
 
 include: '/ci/gitlab.yml'
