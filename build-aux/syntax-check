@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cd $MESON_SOURCE_ROOT/build-aux
+
+MAKE=`which gmake`
+test -z "$MAKE" && MAKE=make
+$MAKE -f syntax-check.mk syntax-check

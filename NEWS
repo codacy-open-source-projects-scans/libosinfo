@@ -1,0 +1,727 @@
+               libosinfo News
+               ==============
+1.12.0 - Oct 23, 2023
+=====================
+
+- Some memory leak fixes #156
+- Adapt to change in libxml2 #155
+- Several CI improvements
+- Several translations improvements
+
+1.11.0 - Oct 27, 2023
+=====================
+
+- Several minor leak fixes #133
+- Several CI improvements
+- Several translations improvements
+
+1.10.0 - Feb 14, 2022
+=====================
+
+- Add API for resolving multiple tree matches
+- Add API for resolving multiple media matches
+- Add API to match between two OsinfoTree
+- Add API to match between two OsinfoMedia
+- Add API to get a complete list of firmwares
+- Add missing documentation of osinfo_os_add_firmware()
+- Add release status to osinfo-query
+- Add --all flag to all tools to report all matches
+- Fix hiding database entries
+- Adapt to libsoup3 which is now preferred over libsoup2
+- Several CI improvements
+- Several translations improvements
+
+1.9.0 - Feb 02, 2021
+====================
+
+- Improve on the osinfo-tools' and osinfo-detect's help
+- Several CI improvements
+- Several translations improvements
+- Improve on debuggability of the loader code
+- Fix build when using clang
+
+
+1.8.0 - May 29, 2020
+====================
+
+- Several CI improvements
+- Several release scripts improvements
+- Several translations improvements
+- Several syntax-check improvements
+- Code cleanup in order to modernize the GObject usage
+- Add API to get whether a firmware is supported or not
+- Add API to get "cloud-image-username"
+
+
+1.7.1 - Dec 04, 2019
+====================
+
+- Fix usage of versioned symbols
+- MinGW spec file fixes and improvements
+- Fix pci.ids and usb.ids installation
+
+
+1.7.0 - Nov 29, 2019
+====================
+
+- Add API to expose a device driver "priority"
+- Improve media detection when using "volume-size" to distinguish medias
+- General improvements on OsinfoList APIs to avoid unsafe access
+- Minor POD fixes
+- Switch to meson build system
+- Add API to expose "firmware" support on OsinfoOS
+- Drop "env" type support from osinfo-detect
+- Print the architecture of the detected tree / media on osinfo-detect
+- Add API to create an OsinfoTree from a treeinfo file
+
+
+1.6.0 - Jul 26, 2019
+====================
+
+- Add API to get the kernel URL argument for an OsinfoOs
+- Improve detection of PPC ISOs
+- Add API to create an OsinfoMedia from location using
+  OsinfoMediaDetectFlags
+- Add API to get whether a media is bootable or not
+- Add OsinfoTree treeinfo properties
+- Add API to identify an OsinfoTree
+- Deprecate API to guess an OsinfoOs from OsinfoTree
+- Add --config-file to osinfo-install-script tool
+- Deprecate --config usage for user & admin passwords on
+  osinfo-install-script tool
+- Add API to generate an install-script and its command-line
+  for OsinfoTree
+- Use libsoup for "http://" & "https://" requests for creating
+  both OsinfoMedia & OsinfoTree
+- Drop GVFS dependency
+- Add OsinfoOs property to OsinfoTree
+
+
+1.5.0 - May 09, 2019
+====================
+
+- Add API to get an OS from OsinfoTrees & OsinfoImages
+- Add API to set an OS to OsinfoTrees & OsinfoImages
+- Add API to get the OS variants from OsinfoTrees & OsinfoImages
+- Add API to set the installation URL to a OsinfoInstallConfig
+- Add API to get all short-ids from an OsinfoProduct
+- Improve OsinfoLoader in order to fully support multiple short-ids values on
+  an OsinfoProduct
+- Improve osinfo-detect tool's help wording
+- Improve osinfo-detect tool, making it aware of OsinfoTree's OS variants
+- Fix the loading of the architecture value of OsinfoImages
+- Fix usage of application id on media detection
+- Accept "all" as a valid fallback architecture for OsinfoTrees & OsinfoMedias
+- Improve treeinfo check by checking for both ".treeinfo" and "treeinfo" files
+- Explicitly set GVFS as a requirement in the project spec file
+- Move osinfo-db related tests to osinfo-db project
+
+
+1.4.0 - Mar 01, 2019
+====================
+
+- Add isodata test files for more distros
+- Refreshed translations from Zanata
+- Drop reprecated gnome-common and intltool
+- Fix test cases checking for medias, trees and images URIs due to
+  libcurl issues when reusing the curl handler
+- Fix media identification when its identifiers have the maximum
+  allowed size
+- Fix filling up the media properties when identifying it
+- Improvements in the tests in order to reduce code duplication
+- Add one test case per OS for medias, trees and images URIs tests
+- Add OSINFO_RELEASE_STATUS_ROLLING release status
+- Add API to add an installer script to a media
+- Add API to get all the installer scripts from a media
+
+
+1.3.0 - Jan 30, 2019
+====================
+
+- Add isodata test files for many more distros
+- Refreshed translations from Zanata
+- Refuse to load data files which do not follow the
+  documented directory layout and file naming conventions
+  introduced in version 0.3.0
+- Avoid warnings when setting GError objects with new glib
+- Remove outdated FSF address from source file headers
+- Make several test suites collect & report all errors
+  before exiting with failure for easy diagnosis
+- Avoid misc memory leaks
+- Add support for reporting maximum resource settings
+- Add support for reporting network installer resource settings
+- Fix data returned for osinfo_devicelinklist_get_devices
+- Support removal of devices during inheritance processing
+- Support inheritance of resources settings
+- Add OsinfoImage class & related APIs for reporting
+  pre-installed disk images
+- Add API to determine if treeinfo metadata is provided
+- Add API to determine if media supports installer scripts
+- Add API to determine preferred install script injection
+  methods
+- Add support for detecting if PPC ISO images are bootable
+
+
+1.2.0 - Jun 20, 2018
+====================
+
+- Test suite requires osinfo-db >= 20180612
+- Replace use of libsoup with libcurl in test suite
+- Replace use of check library with GLib tester in test suite
+- Increase timeout for media URIs test
+- Drop const parameter annotations which break Rust generator
+- Improve error message with ISO test fails
+- Turn off -Wfunction-cast-type warning from gcc 8
+- Remove calls to g_log_set_always_fatal in tests
+- Load database files in alphabetical order for predictable sorting
+- Fix leak of list when loading files
+- Fix build of tools with clang 6
+- Add missing "global" annotation on some symbol versions
+
+
+1.1.0 - Aug 15, 2017
+====================
+
+- Force UTF-8 locale for new glib-mkenums
+- Avoid python warnings in example program
+- Misc test suite updates
+- Fix typo in error messages
+- Remove ISO header string padding
+- Disable bogus gcc warning about unsafe loop optimizations
+- Remove reference to fedorahosted.org
+- Don't hardcode /usr/bin/perl, use /usr/bin/env
+- Support eject-after-install parameter in OsinfoMedia
+- Fix misc warnings in docs
+- Fix error propagation when loading DB
+- Add usb.ids / pci.ids locations for FreeBSD
+- Don't include private headers in gir/vapi generation
+
+1.0.0 - Oct  7, 2016
+====================
+
+- Update loader to follow new layout for external
+  database
+- Move all database files into separate osinfo-db package
+- Move osinfo-db-validate into osinfo-db-tools package
+
+0.3.1 - Jul 01, 2016
+====================
+
+Changes since 0.3.0:
+
+- Require glib2 >= 2.36
+- Replace GSimpleAsyncResult usage with GTask
+- Fix VPATH based builds
+- Don't include autogenerated enum files in dist
+- Fix build with older GCC versions
+- Add/improve/fix data for
+  - Debian
+  - SLES/SLED
+  - OpenSUSE
+  - FreeBSD
+  - Windows
+  - RHEL
+  - Ubuntu
+- Update README content
+- Fix string comparison for bootable media detection
+- Fix linker flags for OS-X & solaris
+- Fix darwin detection code
+- Fix multiple memory leaks
+
+
+0.3.0 - Jan 08, 2016
+====================
+
+Changes since 0.2.12:
+
+- Ditch custom udev rule since udev/blkid already expose ISO9660 properties.
+- New layout for database to facilitate local admin customization. Refer to
+  docs/database-layout.txt for full details.
+- Many build-related fixes.
+- Plug many memory leaks.
+- Drop redundant information on PCI devices.
+- Fix the URI format for install scripts.
+- Memory corruption fixes.
+- Massive refactoring/cleanup of database.
+- Fixes to tests.
+- osinfo_loader_process_*() now expect a directory argument. Regular files are
+  still supported but this support is deprecated.
+- Ensure Linux install scripts install qemu-guest-agent. This allows
+  applications to do things like resyncing the clock of guest with that of host.
+- Add/improve/fix data on:
+  - Alt Linux
+  - CentOS
+  - Debian
+  - Fedora
+  - FreeBSD
+  - GNOME
+  - KVM
+  - Microsoft Windows 7, 8, 10 and Server 2012
+  - Novell Netware
+  - OpenBSD
+  - openSUSE
+  - PCI and PS/2 devices
+  - Qemu
+  - Red Hat Enterprise Linux
+  - Red Hat Linux
+  - Solaris
+  - Ubuntu
+  - Xen
+- Many internal cleanups.
+
+Dependencies changed:
+
+Require libsoup >= 2.42
+
+0.2.12 - May 27, 2015
+=====================
+
+Changes since 0.2.11:
+
+- Add API to get/set ISO9660 volume size of media.
+- Make use of volume size of ISO files for detection. This enables us to
+  differentiate between DVD and netiso of Fedora, for example.
+- Allow install trees to be associated with specific variants of the OS.
+- Use direct HTTPS URLs to drivers.
+- Install scripts
+  * Add API to generate script against a particular media.
+  * Fix Fedora script to work with netiso.
+  * Bigger /boot partition for Fedora and RHEL.
+  * Don't specify network interface for Fedora and RHEL.
+- Add/improve/fix data on:
+  - Debian 8.0
+  - Fedora (all versions)
+  - GNOME 3.14
+  - Microsoft Windows Vista, 7 and 8.1.
+  - OpenBSD 5.6
+  - openSUSE
+  - RHEL 5.9-11, 6.6 and Atomic 7.0.
+  - SUSE
+  - Ubuntu 14.04 and 15.04.
+- Fix some leaks.
+- Fix and add some API documentation.
+- Many build fixes.
+
+0.2.11 - Aug 19, 2014
+=====================
+
+Changes since 0.2.10:
+
+- Document hostname limitations.
+- Export OSINFO_*_VERSION macros.
+- Add desktop scripts for Debian.
+- Add API to query install scripts if they require an internet connection.
+- Some fixes to Debian JEOS script.
+- Add/improve/fix data on:
+  - CentOS
+  - Debian
+  - FreeBSD
+  - Microsoft Windows 7
+  - Microsoft Windows 8
+  - Microsoft Windows Server 2012
+  - Microsoft Vista
+  - OpenBSD
+  - OpenSUSE
+  - Red Hat Enterprise Linux 7
+- More ISO detection testcases.
+- Many performance improvements.
+- Fixes to documentation.
+- Fixes to build.
+
+0.2.10 - Mar 20, 2014
+=====================
+
+Changes since 0.2.9:
+
+- Add API and option to osinfo-install-script utility that allows you to query
+  the available methods to inject the installer script to the installation
+  process.
+- Add JEOS installer scripts for Debian and Ubuntu.
+- Disable installer script for Windows 8.1 as its known not to work.
+- Allow XML special chars in installer script configuration values.
+- Fix a few build issues.
+- Add/improve/fix data on:
+  - Debian
+  - Fedora
+  - FreeBSD
+  - Mandrake
+  - Mandriva
+  - Microsoft Windows 7
+  - openSUSE
+  - Solaris
+  - Ubuntu
+  - Qemu
+
+0.2.9 - Dec 16, 2013
+====================
+
+Changes since 0.2.8:
+
+- Add/improve/fix data on:
+  - Debian
+  - Fedora 20
+  - GNOME continuous 3.12
+  - Mageia
+  - Microsoft Windows 7
+  - Microsoft Windows 8.1
+  - RHEL 5.8
+  - RHEL 6.5
+  - RHEL 7.0
+- Support '<foo/>' syntax for booleans in database, in addition to existing
+  '<foo>true</foo>'.
+- New API/XML to determine/specify:
+  - if an OS is an actual release, a pre-release or a development snapshot.
+  - variants of an OS. For example, professional, enterprise and ultimate
+    editions of Windows OSs and workstation and server variants of RHEL etc.
+- Various fixes to build system.
+- More testcases.
+- Some other minor fixes/changes.
+
+0.2.8 - Sep 16, 2013
+====================
+
+Changes since 0.2.7:
+- Add/improve/fix data on:
+  - ALTLinux
+  - Fedora 19
+  - Fedora 20
+  - FreeBSD
+  - GNOME 3.8
+  - GNOME 3.10
+  - Microsoft Windows 7
+  - QEMU
+  - Ubuntu
+- Add testcases for media detection:
+  - Microsoft Windows Server 2008 R2
+- Fix export of public API.
+- Hide private API.
+- Fix a parallel build issue.
+- Fix build against latest intltool.
+- Drop usage of deprecated API.
+
+0.2.7 - May 13, 2013
+====================
+
+Changes since 0.2.6:
+
+- Add/improve/fix data on:
+  - CentOS 6.*
+  - Fedora 19
+  - GNOME 3.8
+  - openSUSE 12.3
+  - RHEL 6.4
+  - Ubuntu 13.04
+- Add testcases for media detection:
+  - Debian 7.0.*
+  - Fedora 17, 18 and 19
+  - Ubuntu 12.10 and 13.04
+- Installer script fixes/improvements:
+  - Setup user avatar for Windows 7.
+  - Fix against old RHEL and Fedora.
+  - Specify installation method for Fedora (required by Fedora 19).
+- New API:
+  - osinfo_platform_get_all_devices()
+  - osinfo_install_script_generate_command_line()
+- build:
+  - Take DESTDIR into account when creating symlinks.
+  - Fix issues with installing in a tree where libosinfo was already installed.
+  - Fix a race-condition regarding usb.ids/pci.ids setup.
+  - Disable static libraries by default.
+- Some portability improments/fixes.
+- Fixes `make syntax-check`.
+- More docs and fixes to existing docs.
+
+0.2.6 - March 18, 2013
+======================
+
+Changes since 0.2.5:
+
+- New API to:
+  - query signed status of device drivers.
+  - query device driver signing requirement of installer scripts.
+  - enable/disable installer script driver signing checks.
+- Use system-installed pci.ids/usb.ids files, if available.
+- Don't ignore vendor/device names from pci.ids/usb.ids files.
+- Corrections to RPM spec.
+
+0.2.5 - March 04, 2013
+======================
+
+Changes since 0.2.4:
+
+- Make use of post-installation drivers in Windows 7 install scripts. This
+  implies apps can now easily setup virtio+QXL device drivers and spice-vdagent
+  as part of Windows 7 unattended installation.
+- Windows 7 install script now requires product key, mainly because product key
+  is the only way to choose product when dealing with installer media with
+  multiple products on it.
+- Actually add install scripts for Windows 8. This was supposed to be merged in
+  release 0.2.3.
+- Formalize architecture names in DB to align with libvirt. The main change is
+  that i386, i486, i586, all merge to just i686, since in practice these
+  differences haven't mattered for at least 15 years now.
+- Fixes to mingw RPM spec from Fedora.
+- Add a Windows 7 volume ID to DB.
+
+0.2.4 - Feb 19, 2013
+====================
+
+Changes since 0.2.3:
+
+- Fix crash in osinfo-detect against non-bootable media.
+- osinfo-install-script now displays names of generated files.
+- Add an all-in-one virtio and QXL device driver setup binary to Windows XP
+  and 7. Same binary also installs spice-vdagent for us.
+- Make use of post-installation drivers in Windows XP installer scripts.
+- Log post-install commands of Windows XP to target disk.
+- Add/improve/fix data on:
+  - QEMU/QEMU-KVM hypervisor
+  - GNOME
+  - openSUSE
+- RPM spec file changes:
+  - Include datamaps and locale files.
+  - Pointto libosinfo official website.
+  - Disable udev rule on Fedora >= 19. Changes in udev > 197 and
+    libblkid > 2.22.2 have made this rule obsolete.
+- Adapt to glib 2.36.
+- Fix some build warnings.
+- Some other fixes and improvements.
+
+0.2.3 - Jan 14, 2013
+====================
+
+Changes since 0.2.2:
+
+- Add datamaps for translating OS-neutral values to OS-specific ones, e.g some
+  installer configuration parameters like keyboard, language and timezone etc.
+- New API to detect media that makes it possible to also query languages
+  supported by the media.
+- Add install scripts for:
+  - RHEL 6.x.
+  - Microsoft Windows 8
+- Fix install script for Fedora 18.
+- Drop support for encoding in l10n install script configuration parameters.
+- Fix test build issues.
+- Fixes and improvements to documentation.
+- Fix potential issues spotted by Coverity.
+- Fix build for translations.
+- osinfo-install-script tool now has options to list available configuration
+  parameters and profiles.
+- Add/improve data on:
+  - RHEL
+  - Debian
+  - openSUSE
+  - Microsoft Windows 7
+  - Ubuntu
+  - MacOS X
+- Added translations:
+  - Ukrainian
+  - Polish
+- Many other fixes and improvements.
+
+0.2.2 - Dec 10, 2012
+====================
+
+Changes since 0.2.1:
+
+- Loads of improvements and fixes to installer APIs and scripts. Now they are in
+  such a good shape that next release of Boxes will make full use of them.
+- Add API for information on downloadable device drivers. As a starting point,
+  information on virtio storage drivers for Windows XP and 7 is provided.
+- Add/improve data on:
+  - RHEL
+  - Windows 7
+  - Windows 8
+  - Windows XP
+- Enable translations for many (potential) user-visible strings. No
+  translations submitted yet. :(
+- Correct default value for OsinfoMedia::installer-reboots.
+- Register enum types with gobject type system.
+- Add enum param getter/setter helpers.
+- OsinfoList is now instantiable and all its subclasses has been deprecated.
+  Newer code should use OsinfoList directly.
+- Various other fixes and improvements.
+
+0.2.1 - Oct 12, 2012
+====================
+
+Changes since 0.2.0:
+
+- Fix and simplify udev rule.
+- Fedora:
+  - Fix minimum RAM requirements for F16 and F17.
+- Add data on:
+  - Fedora 18
+  - GNOME 3.6
+  - Ubuntu 12.10
+- Fixes to doc build.
+- Install script:
+  - Add get_config_param method.
+  - Differentiate between expected/output script names.
+  - Add more utility functions.
+- Add 'installer-reboots' parameter to medias.
+- osinfo-detect does not die of DB loading errors anymore.
+- More type-specific entity value getters/setters.
+- Fix and update RNG file.
+- Add 'subsystem' property/attribute to devices.
+
+0.2.0 - Aug 31, 2012
+====================
+
+Introducing a new set of APIs to enable application developers to easily create
+unattended/automated installation scripts for various operating systems.
+Currently only Fedora and Microsoft Windows are supported. Also provided is a
+commandline tool, 'osinfo-install-script' to easily create such scripts without
+having to write any code.
+
+Other changes since 0.1.2:
+
+- Fix build against mingw64 toolchain.
+- API for getting product logo URLs.
+- Fix architecture for a Windows 2008 media.
+- Remove bogus minimum storage information for Fedora.
+- Add varirables for system and local database paths in pkg-config.
+
+0.1.2 - Jun 11, 2012
+====================
+
+Changes since 0.1.1:
+
+- Fix udev rules for CDROM media.
+- Fix build against newer glibc-headers when building with -O0.
+- More complete/up2date data for:
+  - Fedora 17
+  - Ubuntu
+  - Windows
+- Fix data for:
+  - Ubuntu
+- Correct order of elements returned by list union functions.
+
+0.1.1 - Apr 12, 2012
+====================
+
+Changes since 0.1.0:
+
+- Fixes to OS media detection.
+- Add support for more OSs:
+  - NetBSD
+  - Mandrake
+- More complete data for:
+  - Debian
+  - Fedora
+  - RHEL
+  - Ubuntu
+  - Windows
+  - OpenBSD
+  - FreeBSD
+  - Mandriva
+- Fix data for:
+  - Fedora
+  - openSUSE
+  - Ubuntu
+  - Windows
+- Add support for install tree metadata.
+- Add support for filtering products based on release/EOL dates.
+- Add support for product codenames.
+- Add support for 'distro'.
+- Also extract application ID from ISO9660 media.
+- Add test cases for validating ISO9660 data.
+- Disable obsolete media URLs.
+- Standardize OS family names as all lowercase.
+- Standardize format for OS id, short-id, distro, version.
+- Add RNG schema for database files.
+- Add a 'osinfo-db-validate' command for verifying database files.
+- Add a 'osinfo-query' command for searching/listing information from database.
+- Add a man page for the osinfo-detect command.
+- Add support for loading extra local database files. By default, libosinfo will
+  expect them to be in /etc/libosinfo/db and $HOME/.local/config/libosinfo/db
+  but new API is provided to change this behavior.
+- Fix generation of docs in a VPATH builder.
+- Fix loading of vendor and product names of USB and PCI devices.
+- Remove obsolete scripts for PCI/USB id conversion.
+- Remove redundant generic linux entries from database.
+- Fixes for 'make dist'.
+- Actually handle '--enable-vala' configure option and don't mandate vapigen if
+  this option is not specified.
+- Add missing export of osinfo_entity_set_param.
+- Various other fixes and improvements.
+
+0.1.0 - Feb 7, 2012
+===================
+
+This release marks the start of the API/ABI stability promise. While some APIs
+may become deprecated in the future, no APIs will be removed/changed in an
+incompatible manner. In the unlikely event that an incompatible API change
+becomes necessary, the library soname will be incremented to allow parallel
+installation of both old & new libraries.
+
+Changes since 0.0.5:
+
+- Add Utility function to retrieve OS devices by property.
+- Improved OS media detection.
+- Add missing 'const' OsinfoList function params.
+- Use ENV{} in udev rule.
+
+0.0.5 - Jan 16, 2012
+====================
+
+Changes since 0.0.4:
+
+- Add QXL to supported devices of windows and Fedora.
+- Distribute and install forgotten device XML files.
+- Add all metadata from default path, not just OS.
+- List supported audio devices for Windows and Fedora.
+- Specify 'derives-from' relationship for Fedora OSs.
+- Add API to retrieve all supported devices for an OS.
+- Fix some potential issues related to memory allocation/alignment.
+
+0.0.4 - Dec 19, 2011
+====================
+
+Changes since 0.0.3:
+
+- Fix silly mistakes in udev rules file.
+
+0.0.3 - Dec 16, 2011
+====================
+
+Changes since 0.0.2:
+
+- Add lots of more data on various different OSs out there. Now we also support
+  some Apple OSs.
+- On successful OS detection, inform the application which known media of the OS
+  the given media matched against. osinfo-detect tool and udev rule updated to
+  make us of this.
+- Support applications' right to not be interested in error details.
+- Minor fixes/improvements to OS detection logic.
+- API to indicate media is live and/or installer.
+- Don't match non-live Fedora ISOs against live ones.
+- Fixes to Python demo to make it work.
+- Fix some potential crashes.
+- Fixes to RPM spec file.
+- Distribute RPM spec file.
+- Complement some getters with corresponding gobject properties.
+- Few other random minor fixes.
+
+WARNING: This release (slightly) breaks API with the last one.
+
+0.0.2 - Nov 22, 2011
+====================
+
+Changes since 0.0.1:
+
+- Improve media detection for Fedora, RHEL and Windows 7.
+- More complete documentation.
+- Fix configure script to not require 'check' when tests are disabled.
+- More automated documentation generation.
+- Add Fedora 16 metadata.
+- Recommend 9 GiB storage for Fedora 14-16.
+- Add openSUSE data.
+- Fix some copy&paste mistakes in OS database.
+- Add media information for 2011 Ubuntu releases and CentOS 6.0.
+- Improve README file.
+
+0.0.1
+=====
+
+First public release.

@@ -1,0 +1,53 @@
+projects:
+  - libosinfo
+  - https://gitlab.com/libosinfo/osinfo-db/-/raw/main/ci/lcitool/projects/osinfo-db.yml
+  - https://gitlab.com/libosinfo/osinfo-db-tools/-/raw/main/ci/lcitool/projects/osinfo-db-tools+dist.yml
+
+gitlab:
+  namespace: libosinfo
+  project: libosinfo
+
+targets:
+  almalinux-9: x86_64
+
+  alpine-318: x86_64
+
+  alpine-319: x86_64
+
+  alpine-edge: x86_64
+
+  centos-stream-9: x86_64
+
+  debian-11: x86_64
+
+  debian-12: x86_64
+
+  debian-sid: x86_64
+
+  fedora-39: x86_64
+
+  fedora-40: x86_64
+
+  fedora-rawhide:
+    jobs:
+      - arch: x86_64
+
+      - arch: mingw32
+
+      - arch: mingw64
+
+  opensuse-leap-15:
+    jobs:
+      - arch: x86_64
+        variables:
+          RPM: skip
+
+  opensuse-tumbleweed:
+    jobs:
+      - arch: x86_64
+        variables:
+          RPM: skip
+
+  ubuntu-2204: x86_64
+
+  ubuntu-2404: x86_64
