@@ -7,6 +7,17 @@
 
 # Native build jobs
 
+x86_64-almalinux-10:
+  extends: .native_build_job
+  needs:
+    - job: x86_64-almalinux-10-container
+      optional: true
+  allow_failure: false
+  variables:
+    NAME: almalinux-10
+    TARGET_BASE_IMAGE: docker.io/library/almalinux:10
+
+
 x86_64-almalinux-9:
   extends: .native_build_job
   needs:
@@ -18,26 +29,26 @@ x86_64-almalinux-9:
     TARGET_BASE_IMAGE: docker.io/library/almalinux:9
 
 
-x86_64-alpine-318:
+x86_64-alpine-322:
   extends: .native_build_job
   needs:
-    - job: x86_64-alpine-318-container
+    - job: x86_64-alpine-322-container
       optional: true
   allow_failure: false
   variables:
-    NAME: alpine-318
-    TARGET_BASE_IMAGE: docker.io/library/alpine:3.18
+    NAME: alpine-322
+    TARGET_BASE_IMAGE: docker.io/library/alpine:3.22
 
 
-x86_64-alpine-319:
+x86_64-alpine-323:
   extends: .native_build_job
   needs:
-    - job: x86_64-alpine-319-container
+    - job: x86_64-alpine-323-container
       optional: true
   allow_failure: false
   variables:
-    NAME: alpine-319
-    TARGET_BASE_IMAGE: docker.io/library/alpine:3.19
+    NAME: alpine-323
+    TARGET_BASE_IMAGE: docker.io/library/alpine:3.23
 
 
 x86_64-alpine-edge:
@@ -51,6 +62,17 @@ x86_64-alpine-edge:
     TARGET_BASE_IMAGE: docker.io/library/alpine:edge
 
 
+x86_64-centos-stream-10:
+  extends: .native_build_job
+  needs:
+    - job: x86_64-centos-stream-10-container
+      optional: true
+  allow_failure: false
+  variables:
+    NAME: centos-stream-10
+    TARGET_BASE_IMAGE: quay.io/centos/centos:stream10
+
+
 x86_64-centos-stream-9:
   extends: .native_build_job
   needs:
@@ -60,17 +82,6 @@ x86_64-centos-stream-9:
   variables:
     NAME: centos-stream-9
     TARGET_BASE_IMAGE: quay.io/centos/centos:stream9
-
-
-x86_64-debian-11:
-  extends: .native_build_job
-  needs:
-    - job: x86_64-debian-11-container
-      optional: true
-  allow_failure: false
-  variables:
-    NAME: debian-11
-    TARGET_BASE_IMAGE: docker.io/library/debian:11-slim
 
 
 x86_64-debian-12:
@@ -84,6 +95,17 @@ x86_64-debian-12:
     TARGET_BASE_IMAGE: docker.io/library/debian:12-slim
 
 
+x86_64-debian-13:
+  extends: .native_build_job
+  needs:
+    - job: x86_64-debian-13-container
+      optional: true
+  allow_failure: false
+  variables:
+    NAME: debian-13
+    TARGET_BASE_IMAGE: docker.io/library/debian:13-slim
+
+
 x86_64-debian-sid:
   extends: .native_build_job
   needs:
@@ -95,26 +117,26 @@ x86_64-debian-sid:
     TARGET_BASE_IMAGE: docker.io/library/debian:sid-slim
 
 
-x86_64-fedora-39:
+x86_64-fedora-42:
   extends: .native_build_job
   needs:
-    - job: x86_64-fedora-39-container
+    - job: x86_64-fedora-42-container
       optional: true
   allow_failure: false
   variables:
-    NAME: fedora-39
-    TARGET_BASE_IMAGE: registry.fedoraproject.org/fedora:39
+    NAME: fedora-42
+    TARGET_BASE_IMAGE: registry.fedoraproject.org/fedora:42
 
 
-x86_64-fedora-40:
+x86_64-fedora-43:
   extends: .native_build_job
   needs:
-    - job: x86_64-fedora-40-container
+    - job: x86_64-fedora-43-container
       optional: true
   allow_failure: false
   variables:
-    NAME: fedora-40
-    TARGET_BASE_IMAGE: registry.fedoraproject.org/fedora:40
+    NAME: fedora-43
+    TARGET_BASE_IMAGE: registry.fedoraproject.org/fedora:43
 
 
 x86_64-fedora-rawhide:
@@ -137,7 +159,19 @@ x86_64-opensuse-leap-15:
   variables:
     NAME: opensuse-leap-15
     RPM: skip
-    TARGET_BASE_IMAGE: registry.opensuse.org/opensuse/leap:15.5
+    TARGET_BASE_IMAGE: registry.opensuse.org/opensuse/leap:15.6
+
+
+x86_64-opensuse-leap-16:
+  extends: .native_build_job
+  needs:
+    - job: x86_64-opensuse-leap-16-container
+      optional: true
+  allow_failure: false
+  variables:
+    NAME: opensuse-leap-16
+    RPM: skip
+    TARGET_BASE_IMAGE: registry.opensuse.org/opensuse/leap:16.0
 
 
 x86_64-opensuse-tumbleweed:

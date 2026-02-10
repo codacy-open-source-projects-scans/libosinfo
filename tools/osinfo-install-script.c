@@ -31,6 +31,7 @@ static gboolean list_config = FALSE;
 static gboolean list_profile = FALSE;
 static gboolean list_inj_method = FALSE;
 static gboolean quiet = FALSE;
+static gboolean show_command_line = FALSE;
 
 static const gchar *configs[] = {
     OSINFO_INSTALL_CONFIG_PROP_HARDWARE_ARCH,
@@ -159,6 +160,8 @@ static GOptionEntry entries[] =
       (void*)&list_inj_method, N_("List supported injection methods"), NULL },
     { "quiet", 'q', 0, G_OPTION_ARG_NONE, (void*)&quiet,
       N_("Do not display output filenames"), NULL },
+    { "command-line", '\0', 0, G_OPTION_ARG_NONE, (void*)&show_command_line,
+      N_("Print kernel command line instead of generating the script"), NULL },
     { 0 }
 };
 
@@ -293,6 +296,79 @@ static gboolean list_script_inj_method(OsinfoOs *os)
     g_list_free(l);
     g_type_class_unref(f);
     g_object_unref(scripts);
+    return ret;
+}
+
+
+static gboolean generate_command_line(OsinfoOs *os, OsinfoMedia *media)
+{
+    OsinfoInstallScriptList *scripts = osinfo_os_get_install_script_list(os);
+    OsinfoInstallScriptList *profile_scripts;
+    OsinfoFilter *filter;
+    GList *l, *tmp;
+    gboolean ret = FALSE;
+
+    filter = osinfo_filter_new();
+    osinfo_filter_add_constraint(filter,
+                                 OSINFO_INSTALL_SCRIPT_PROP_PROFILE,
+                                 profile ? profile :
+                                 OSINFO_INSTALL_SCRIPT_PROFILE_JEOS);
+    profile_scripts = OSINFO_INSTALL_SCRIPTLIST(osinfo_list_new_filtered(OSINFO_LIST(scripts),
+                                                                         filter));
+    l = osinfo_list_get_elements(OSINFO_LIST(profile_scripts));
+
+    if (!l) {
+        g_printerr(_("No install script for profile '%s' and OS '%s'\n"),
+                   profile, osinfo_product_get_name(OSINFO_PRODUCT(os)));
+        goto cleanup;
+    }
+
+    for (tmp = l; tmp != NULL; tmp = tmp->next) {
+        OsinfoInstallScript *script = tmp->data;
+        OsinfoInstallScriptInstallationSource installation_source;
+        gchar *command_line = NULL;
+        size_t command_line_len;
+
+        installation_source = g_str_equal(source, "network") ?
+                OSINFO_INSTALL_SCRIPT_INSTALLATION_SOURCE_NETWORK :
+                OSINFO_INSTALL_SCRIPT_INSTALLATION_SOURCE_MEDIA;
+        osinfo_install_script_set_installation_source(script,
+                                                      installation_source);
+
+        if (media != NULL) {
+            command_line =
+                    osinfo_install_script_generate_command_line_for_media(script,
+                                                                          media,
+                                                                          config);
+        } else {
+            command_line =
+                    osinfo_install_script_generate_command_line(script,
+                                                                os,
+                                                                config);
+        }
+        if (command_line == NULL) {
+            g_printerr("%s",
+                       _("Unable to generate the command line for the "
+                         "install script\n"));
+            goto cleanup;
+        }
+        /*
+         * Chop the newline at the end, if present; this may happen when
+         * the <xsl:output> in the install script is "xml".
+         */
+        command_line_len = strlen(command_line);
+        if (command_line_len > 0 && command_line[command_line_len - 1] == '\n')
+            command_line[command_line_len - 1] = '\0';
+        g_print("%s\n", command_line);
+        g_free(command_line);
+    }
+    ret = TRUE;
+
+ cleanup:
+    g_list_free(l);
+    g_object_unref(scripts);
+    g_object_unref(filter);
+    g_object_unref(profile_scripts);
     return ret;
 }
 
@@ -463,6 +539,11 @@ gint main(gint argc, gchar **argv)
             ret = -5;
             goto EXIT;
         }
+    } else if (show_command_line) {
+        if (!generate_command_line(os, media)) {
+            ret = -5;
+            goto EXIT;
+        }
     } else {
         if (!generate_script(os, media)) {
             ret = -5;
@@ -529,6 +610,12 @@ Note that use of B<--config-file> is strongly recommended if the user
 or admin passwords need to be set. Providing passwords directly using
 B<--config=> is insecure as the password is visible to all processes
 and users on the same host.
+
+=item B<--command-line>
+
+Instead of generating the install script, print the kernel command
+line needed to boot a system to perform an automated installation
+with the specified configuration parameters.
 
 =back
 

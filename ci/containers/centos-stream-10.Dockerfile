@@ -4,13 +4,12 @@
 #
 # https://gitlab.com/libvirt/libvirt-ci
 
-FROM quay.io/centos/centos:stream9
+FROM quay.io/centos/centos:stream10
 
 RUN dnf --quiet distro-sync -y && \
     dnf --quiet install 'dnf-command(config-manager)' -y && \
     dnf --quiet config-manager --set-enabled -y crb && \
     dnf --quiet install -y epel-release && \
-    dnf --quiet install -y epel-next-release && \
     dnf --quiet install -y \
                 ca-certificates \
                 ccache \
@@ -24,7 +23,7 @@ RUN dnf --quiet distro-sync -y && \
                 gobject-introspection-devel \
                 gtk-doc \
                 hwdata \
-                libsoup-devel \
+                libsoup3-devel \
                 libxml2 \
                 libxml2-devel \
                 libxslt-devel \

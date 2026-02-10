@@ -20,7 +20,7 @@ function install_buildenv() {
             libc6-dev \
             libgirepository1.0-dev \
             libglib2.0-dev \
-            libsoup2.4-dev \
+            libsoup-3.0-dev \
             libxml2-dev \
             libxml2-utils \
             libxslt1-dev \

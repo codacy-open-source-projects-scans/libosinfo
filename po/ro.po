@@ -1,266 +1,262 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-#
-# Translators:
-# Jérôme Fenal <jfenal@gmail.com>, 2013
-# Christophe Fergeau <cfergeau@redhat.com>, 2015. #zanata
-# Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>, 2019. #zanata
-# Julien Humbert <julroy67@gmail.com>, 2020.
-# Julien Lepiller <fedora-account@lepiller.eu>, 2022.
-# Léane GRASSER <leane.grasser@proton.me>, 2024.
+# This file is distributed under the same license as the libosinfo package.
+# Languages add-on <noreply-addon-languages@weblate.org>, 2026.
+# Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: libosinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-04 17:27+0200\n"
-"PO-Revision-Date: 2024-11-06 22:38+0000\n"
-"Last-Translator: Léane GRASSER <leane.grasser@proton.me>\n"
-"Language-Team: French <https://translate.fedoraproject.org/projects/"
-"libosinfo/libosinfo/fr/>\n"
-"Language: fr\n"
+"PO-Revision-Date: 2026-01-20 12:58+0000\n"
+"Last-Translator: Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>\n"
+"Language-Team: Romanian <https://translate.fedoraproject.org/projects/"
+"libosinfo/libosinfo/ro/>\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.8.2\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #: osinfo/osinfo_avatar_format.c:96
 msgid "The allowed mime-types for the avatar"
-msgstr "Les mime-types valides pour l’avatar"
+msgstr "Tipurile MIME permise pentru avatar"
 
 #: osinfo/osinfo_avatar_format.c:107
 msgid "The required width (in pixels) of the avatar"
-msgstr "La largeur requise (en pixels) pour l’avatar"
+msgstr "Lățimea necesară (în pixeli) a avatarului"
 
 #: osinfo/osinfo_avatar_format.c:121
 msgid "The required height (in pixels) of the avatar."
-msgstr "La hauteur requise (en pixels) pour l’avatar."
+msgstr "Înălțimea necesară (în pixeli) a avatarului."
 
 #: osinfo/osinfo_avatar_format.c:135
 msgid "Whether alpha channel is supported in the avatar."
-msgstr "Indique si le canal alpha est pris en charge dans l'avatar."
+msgstr "Dacă canalul alfa este acceptat în avatar."
 
 #: osinfo/osinfo_deployment.c:141
 msgid "Operating system"
-msgstr "Système d’exploitation"
+msgstr "Sistemul de operare"
 
 #: osinfo/osinfo_deployment.c:153
 msgid "Virtualization platform"
-msgstr "Plateforme de virtualisation"
+msgstr "Platforma de virtualizare"
 
 #: osinfo/osinfo_devicelink.c:124
 msgid "Target device"
-msgstr "Périphérique cible"
+msgstr "Dispozitiv țintă"
 
 #: osinfo/osinfo_devicelinkfilter.c:127
 msgid "Device link target filter"
-msgstr "Filtre de cible de lien de périphérique"
+msgstr "Filtru țintă pentru legătura dispozitivului"
 
 #: osinfo/osinfo_entity.c:131
 msgid "Unique identifier"
-msgstr "Identifiant unique"
+msgstr "Identificator unic"
 
 #: osinfo/osinfo_firmware.c:129 osinfo/osinfo_image.c:161
 #: osinfo/osinfo_media.c:474 osinfo/osinfo_resources.c:160
 #: osinfo/osinfo_tree.c:307
 msgid "CPU Architecture"
-msgstr "Architecture CPU"
+msgstr "Arhitectura CPU-ului"
 
 #: osinfo/osinfo_firmware.c:141
 msgid "The firmware type"
-msgstr "Le type de micrologiciel"
+msgstr "Tipul firmware-ului"
 
 #: osinfo/osinfo_image.c:173
 msgid "The image format"
-msgstr "Le format d’image"
+msgstr "Formatul imaginii"
 
 #: osinfo/osinfo_image.c:185
 msgid "The URL to this image"
-msgstr "L’URL de cette image"
+msgstr "Adresa URL a acestei imagini"
 
 #: osinfo/osinfo_image.c:197
 msgid "Whether cloud-init customizations are supported or not"
-msgstr ""
-"Indique si les personnalisations de cloud-init sont prises en charge ou non"
+msgstr "Dacă personalizările cloud-init sunt acceptate sau nu"
 
 #: osinfo/osinfo_install_config_param.c:146
 msgid "Parameter name"
-msgstr "Nom du paramètre"
+msgstr "Numele parametrului"
 
 #: osinfo/osinfo_install_config_param.c:159
 msgid "Parameter policy"
-msgstr "Politique du paramètre"
+msgstr "Politica parametrului"
 
 #: osinfo/osinfo_install_config_param.c:172
 msgid "Parameter Value Mapping"
-msgstr "Association paramètre/valeur"
+msgstr "Asocierea parametru/valoare"
 
 #: osinfo/osinfo_install_script.c:209
 msgid "URI for install script template"
-msgstr "URI du modèle de script d’installation"
+msgstr "Adresa URI pentru șablonul scriptului de instalare"
 
 #: osinfo/osinfo_install_script.c:218
 msgid "Data for install script template"
-msgstr "Données pour le modèle de script d’installation"
+msgstr "Date pentru șablonul scriptului de instalare"
 
 #: osinfo/osinfo_install_script.c:227
 msgid "Install script profile name"
-msgstr "Nom de profil du script d’installation"
+msgstr "Numele profilului scriptului de instalare"
 
 #: osinfo/osinfo_install_script.c:236
 msgid "Product key format mask"
-msgstr "Masque de format de clé produit"
+msgstr "Masca formatului cheii produsului"
 
 #: osinfo/osinfo_install_script.c:243
 msgid "Expected path format"
-msgstr "Format attendu pour le chemin"
+msgstr "Formatul așteptat al rutei"
 
 #: osinfo/osinfo_install_script.c:251
 msgid "Expected avatar format"
-msgstr "Format attendu pour l’avatar"
+msgstr "Formatul așteptat al avatarului"
 
 #: osinfo/osinfo_install_script.c:258
 msgid "The preferred injection method"
-msgstr "La méthode d’injection préférée"
+msgstr "Metoda de injectare preferată"
 
 #: osinfo/osinfo_install_script.c:267
 msgid "The installation source to be used"
-msgstr "La source d’installation à utiliser"
+msgstr "Sursa de instalare care va fi utilizată"
 
 #: osinfo/osinfo_install_script.c:694
 msgid "Unable to create XML parser context"
-msgstr "Impossible de créer le contexte pour l’analyseur XML"
+msgstr "Nu se poate crea contextul analizatorului XML"
 
 #: osinfo/osinfo_install_script.c:702
 msgid "Unable to read XSL template"
-msgstr "Impossible de lire le modèle XSL"
+msgstr "Nu se poate citi șablonul XSL"
 
 #: osinfo/osinfo_install_script.c:708
 msgid "Unable to parse XSL template"
-msgstr "Impossible d’analyser le modèle XSL"
+msgstr "Nu se poate analiza șablonul XSL"
 
 #: osinfo/osinfo_install_script.c:799 osinfo/osinfo_install_script.c:830
 #, c-format
 msgid "Unable to create XML node '%s'"
-msgstr "Impossible de créer le nœud XML « %s »"
+msgstr "Nu se poate crea nodul XML „%s”"
 
 #: osinfo/osinfo_install_script.c:805
 msgid "Unable to create XML node 'id'"
-msgstr "Impossible de créer le nœud XML « id »"
+msgstr "Nu se poate crea nodul XML „id”"
 
 #: osinfo/osinfo_install_script.c:809 osinfo/osinfo_install_script.c:835
 msgid "Unable to add XML child"
-msgstr "Impossible d’ajouter l’enfant XML"
+msgstr "Nu se poate adăuga un copil XML"
 
 #: osinfo/osinfo_install_script.c:882 osinfo/osinfo_install_script.c:892
 #: osinfo/osinfo_install_script.c:926
 msgid "Unable to set XML root"
-msgstr "Impossible de définir la racine XML"
+msgstr "Nu se poate defini rădăcina XML"
 
 #: osinfo/osinfo_install_script.c:903
 msgid "Unable to set 'media' node"
-msgstr "Impossible de positionner le nœud « media »"
+msgstr "Nu se poate defini nodul „media”"
 
 #: osinfo/osinfo_install_script.c:915
 msgid "Unable to set 'tree' node"
-msgstr "Impossible de positionner le nœud « tree »"
+msgstr "Nu se poate defini nodul „tree”"
 
 #: osinfo/osinfo_install_script.c:949
 msgid "Unable to create XSL transform context"
-msgstr "Impossible de créer le contexte de transformation XSL"
+msgstr "Nu se poate crea contextul de transformare XSL"
 
 #: osinfo/osinfo_install_script.c:954
 msgid "Unable to apply XSL transform context"
-msgstr "Impossible d’appliquer le contexte de transformation XSL"
+msgstr "Nu se poate aplica contextul de transformare XSL"
 
 #: osinfo/osinfo_install_script.c:959
 msgid "Unable to convert XSL output to string"
-msgstr "Impossible de convertir la sortie XSL en chaîne"
+msgstr "Nu se poate converti ieșirea XSL în șir de caractere"
 
 #: osinfo/osinfo_install_script.c:1020
 #, c-format
 msgid "Failed to load script template %s: "
-msgstr "Échec du chargement du modèle de script %s : "
+msgstr "Încărcarea șablonului de script %s a eșuat: "
 
 #: osinfo/osinfo_install_script.c:1036
 #, c-format
 msgid "Failed to apply script template %s: "
-msgstr "Échec de l’application du modèle de script %s : "
+msgstr "Eșec la aplicarea șablonului de script %s: "
 
 #: osinfo/osinfo_install_script.c:1094 osinfo/osinfo_install_script.c:2001
 #: osinfo/osinfo_install_script.c:2052 osinfo/osinfo_install_script.c:2104
 msgid "Failed to apply script template: "
-msgstr "Échec de l’application du modèle de script :"
+msgstr "Eșec la aplicarea șablonului de script: "
 
 #: osinfo/osinfo_list.c:124
 msgid "List element type"
-msgstr "Lister les types d’éléments"
+msgstr "Listă de tipuri de elemente"
 
 #: osinfo/osinfo_loader.c:226
 #, c-format
 msgid "Expected a nodeset in XPath query %s"
-msgstr "Ensemble de nœuds (nodeset) attendu dans la requête XPath %s"
+msgstr "Se aștepta un set de noduri (nodeset) în interogarea XPath %s"
 
 #: osinfo/osinfo_loader.c:306 osinfo/osinfo_loader.c:451
 msgid "Expected a text node attribute value"
-msgstr "Valeur d’attribut de nœud texte attendu"
+msgstr "Se aștepta valoarea atributului nodului text"
 
 #: osinfo/osinfo_loader.c:605
 msgid "Missing device id property"
-msgstr "Propriété identifiant de périphérique manquante"
+msgstr "Proprietatea ID-ului dispozitivului lipsește"
 
 #: osinfo/osinfo_loader.c:644
 msgid "Missing device link id property"
-msgstr "Propriété identifiant de lien de périphérique manquante"
+msgstr "Proprietatea ID-ului legăturii dispozitivului lipsește"
 
 #: osinfo/osinfo_loader.c:705
 msgid "Missing product upgrades id property"
-msgstr "Propriété identifiant de mise à jour de produits manquante"
+msgstr "Proprietatea ID-ului actualizării produsului lipsește"
 
 #: osinfo/osinfo_loader.c:789
 msgid "Missing platform id property"
-msgstr "Propriété identifiant de plate-forme manquante"
+msgstr "Proprietatea ID-ului platformei lipsește"
 
 #: osinfo/osinfo_loader.c:828
 msgid "Missing deployment id property"
-msgstr "Propriété identifiant de déploiement manquante"
+msgstr "Proprietatea ID-ului de implementare lipsește"
 
 #: osinfo/osinfo_loader.c:838
 msgid "Missing deployment os id property"
-msgstr "Propriété identifiant d’OS de déploiement manquante"
+msgstr ""
+"Proprietatea ID-ului SO (sistemului de operare) de implementare lipsește"
 
 #: osinfo/osinfo_loader.c:848
 msgid "Missing deployment platform id property"
-msgstr "Propriété identifiant de plate-forme de déploiement manquante"
+msgstr "Proprietatea ID-ului platformei de implementare lipsește"
 
 #: osinfo/osinfo_loader.c:887 osinfo/osinfo_loader.c:1637
 msgid "Missing os id property"
-msgstr "Propriété identifiant d’OS manquante"
+msgstr "Proprietatea ID-ului SO (sistemului de operare) lipsește"
 
 #: osinfo/osinfo_loader.c:1012
 msgid "Missing install script id property"
-msgstr "Propriété identifiant de script d’installation manquante"
+msgstr "Proprietatea ID-ului scriptului de instalare lipsește"
 
 #: osinfo/osinfo_loader.c:1246
 msgid "Missing Media install script property"
-msgstr "Propriété script d’installation de Media manquante"
+msgstr "Proprietatea scriptului de instalare Media lipsește"
 
 #: osinfo/osinfo_loader.c:1805
 msgid "Missing OS install script property"
-msgstr "Propriété script d’installation d’OS manquante"
+msgstr ""
+"Proprietatea scriptului de instalare a sistemului de operare (SO) lipsește"
 
 #: osinfo/osinfo_loader.c:1871
 msgid "Incorrect root element"
-msgstr "Élément racine incorrect"
+msgstr "Element rădăcină incorect"
 
 #: osinfo/osinfo_loader.c:1948
 msgid "Unable to construct parser context"
-msgstr "Impossible de créer le contexte pour l’analyseur"
+msgstr "Nu se poate construi contextul analizatorului"
 
 #: osinfo/osinfo_loader.c:1970
 msgid "Missing root XML element"
-msgstr "Élément racine XML manquant"
+msgstr "Elementul XML rădăcină lipsește"
 
 #: osinfo/osinfo_loader.c:2622
 #, c-format
@@ -268,9 +264,9 @@ msgid ""
 "$OSINFO_DATA_DIR is deprecated, please use $OSINFO_SYSTEM_DIR instead. "
 "Support for $OSINFO_DATA_DIR will be removed in a future release\n"
 msgstr ""
-"$OSINFO_DATA_DIR est déprécié, veuillez utiliser $OSINFO_SYSTEM_DIR à la "
-"place. La prise en charge pour $OSINFO_DATA_DIR sera retirée dans une "
-"version future\n"
+"$OSINFO_DATA_DIR este învechit, vă rugăm să utilizați în schimb "
+"$OSINFO_SYSTEM_DIR. Suportul pentru $OSINFO_DATA_DIR va fi eliminat într-o "
+"versiune viitoare.\n"
 
 #: osinfo/osinfo_loader.c:2658 osinfo/osinfo_loader.c:2690
 #, c-format
@@ -278,244 +274,242 @@ msgid ""
 "%s is deprecated, please use %s instead. Support for %s will be removed in a "
 "future release\n"
 msgstr ""
-"%s est déprécié, veuillez utiliser %s à la place. La prise en charge pour %s "
-"sera retirée dans une version future\n"
+"%s este învechit, vă rugăm să utilizați în schimb %s. Suportul pentru %s va "
+"fi eliminat într-o versiune viitoare.\n"
 
 #: osinfo/osinfo_media.c:486
 msgid "The URL to this media"
-msgstr "URL vers ce média"
+msgstr "Adresa URL către acest conținut media"
 
 #: osinfo/osinfo_media.c:498
 msgid "The expected ISO9660 volume ID"
-msgstr "L’ID de volume ISO9660 attendu"
+msgstr "ID-ul volumului ISO9660 așteptat"
 
 #: osinfo/osinfo_media.c:510
 msgid "The expected ISO9660 publisher ID"
-msgstr "L’ID d’éditeur ISO9660 attendu"
+msgstr "ID-ul editorului ISO9660 așteptat"
 
 #: osinfo/osinfo_media.c:522
 msgid "The expected ISO9660 application ID"
-msgstr "L’ID d’application ISO9660 attendu"
+msgstr "ID-ul aplicației ISO9660 așteptat"
 
 #: osinfo/osinfo_media.c:534
 msgid "The expected ISO9660 system ID"
-msgstr "L’ID système ISO9660 attendu"
+msgstr "ID-ul sistemului ISO9660 așteptat"
 
 #: osinfo/osinfo_media.c:546 osinfo/osinfo_tree.c:331
 msgid "The path to the kernel image"
-msgstr "Le chemin vers l’image noyau"
+msgstr "Ruta către imaginea nucleului"
 
 #: osinfo/osinfo_media.c:558 osinfo/osinfo_tree.c:343
 msgid "The path to the initrd image"
-msgstr "Chemin vers l’image initrd"
+msgstr "Ruta către imaginea initrd"
 
 #: osinfo/osinfo_media.c:570
 msgid "Media provides an installer"
-msgstr "Le média contient un programme d’installation"
+msgstr "Conținutul media furnizează un program de instalare"
 
 #: osinfo/osinfo_media.c:582
 msgid "Media can boot directly w/o installation"
-msgstr "Le média peut démarrer directement sans installation"
+msgstr "Conținutul media poate porni direct fără instalare"
 
 #: osinfo/osinfo_media.c:603
 msgid "Number of installer reboots"
-msgstr "Nombre de redémarrages du programme d’installation"
+msgstr "Numărul de reporniri ale programului de instalare"
 
 #: osinfo/osinfo_media.c:620
 msgid "Information about the operating system on this media"
-msgstr "Informations au sujet du système d’exploitation sur ce média"
+msgstr "Informații despre sistemul de operare de pe acest suport media"
 
 #: osinfo/osinfo_media.c:638
 msgid "Supported languages"
-msgstr "Langages gérés"
+msgstr "Limbi acceptate"
 
 #: osinfo/osinfo_media.c:649
 msgid "Expected ISO9660 volume size, in bytes"
-msgstr "Taille du volume ISO9660 attendue, en octets"
+msgstr "Dimensiunea estimată a volumului ISO9660, în octeți"
 
 #: osinfo/osinfo_media.c:668
 msgid "Whether the media should be ejected after the installation process"
-msgstr ""
-"Indique si le média doit être éjecté après les processus d’installation"
+msgstr "Dacă suportul media trebuie ejectat după procesul de instalare"
 
 #: osinfo/osinfo_media.c:683
 msgid ""
 "Whether the media should be used for an installation using install scripts"
 msgstr ""
-"Indique si le média soit être utilisé pour une installation en utilisant les "
-"scripts d’installation"
+"Dacă conținutul media trebuie utilizat pentru o instalare folosind scripturi "
+"de instalare"
 
 #: osinfo/osinfo_media.c:815
 #, c-format
 msgid "Install media is not bootable"
-msgstr "Le support d'installation n'est pas bootable"
+msgstr "Suportul de instalare nu este capabil de a porni"
 
 #: osinfo/osinfo_media.c:889
 #, c-format
 msgid "Failed to read \"%s\" directory record extent: "
-msgstr ""
-"Échec de la lecture de l’enregistrement correspondant au dossier « %s » : "
+msgstr "Nu s-a putut citi extinderea înregistrării directorului „%s”: "
 
 #: osinfo/osinfo_media.c:898
 #, c-format
 msgid "No \"%s\" directory record extent"
-msgstr "Aucun enregistrement n’a été trouvé pour le dossier « %s »"
+msgstr "Nu există înregistrare de extindere a directorului „%s”"
 
 #: osinfo/osinfo_media.c:1102
 msgid "Failed to read supplementary volume descriptor: "
-msgstr "Impossible de lire le descripteur de volume additionnel :"
+msgstr "Nu s-a putut citi descriptorul volumului suplimentar: "
 
 #: osinfo/osinfo_media.c:1109
 #, c-format
 msgid "Supplementary volume descriptor was truncated"
-msgstr "Le descripteur de volume additionnel a été tronqué"
+msgstr "Descriptorul volumului suplimentar a fost trunchiat"
 
 #: osinfo/osinfo_media.c:1176
 msgid "Failed to read primary volume descriptor: "
-msgstr "Impossible de lire le descripteur de volume principal :"
+msgstr "Nu s-a putut citi descriptorul volumului principal: "
 
 #: osinfo/osinfo_media.c:1183
 #, c-format
 msgid "Primary volume descriptor was truncated"
-msgstr "Le descripteur de volume principal a été tronqué"
+msgstr "Descriptorul volumului principal a fost trunchiat"
 
 #: osinfo/osinfo_media.c:1215
 #, c-format
 msgid "Insufficient metadata on installation media"
-msgstr "Métadonnées insuffisantes sur le média d’installation"
+msgstr "Metadate insuficiente pe suportul de instalare"
 
 #: osinfo/osinfo_media.c:1250
 #, c-format
 msgid "Failed to skip %d bytes"
-msgstr "Impossible de passer %d octets"
+msgstr "Nu s-au putut omite %d octeți"
 
 #: osinfo/osinfo_media.c:1255
 #, c-format
 msgid "No volume descriptors"
-msgstr "Aucun descripteur de volume"
+msgstr "Niciun descriptor de volum"
 
 #: osinfo/osinfo_media.c:1297
 msgid "Failed to open file: "
-msgstr "impossible d’ouvrir le fichier : "
+msgstr "Nu s-a putut deschide fișierul: "
 
 #: osinfo/osinfo_os.c:157
 msgid "Generic Family"
-msgstr "Famille générique"
+msgstr "Familie generică"
 
 #: osinfo/osinfo_os.c:170
 msgid "Generic Distro"
-msgstr "Distribution générique"
+msgstr "Distribuție generică"
 
 #: osinfo/osinfo_os.c:183
 msgid "Kernel URL Argument"
-msgstr "Paramètre d’URL du noyau"
+msgstr "Argumentul URL al nucleului"
 
 #: osinfo/osinfo_os.c:195
 msgid "Cloud image username"
-msgstr "Nom d’utilisateur de l’image cloud"
+msgstr "Numele de utilizator pentru imaginea din cloud"
 
 #: osinfo/osinfo_product.c:161 tools/osinfo-query.c:53 tools/osinfo-query.c:79
 #: tools/osinfo-query.c:105
 msgid "Name"
-msgstr "Nom"
+msgstr "Nume"
 
 #: osinfo/osinfo_product.c:173 tools/osinfo-query.c:51 tools/osinfo-query.c:77
 msgid "Short ID"
-msgstr "ID court"
+msgstr "ID scurt"
 
 #: osinfo/osinfo_product.c:185 tools/osinfo-query.c:61 tools/osinfo-query.c:83
 #: tools/osinfo-query.c:97
 msgid "Vendor"
-msgstr "Fournisseur"
+msgstr "Furnizor"
 
 #: osinfo/osinfo_product.c:197 tools/osinfo-query.c:55 tools/osinfo-query.c:81
 msgid "Version"
-msgstr "Version"
+msgstr "Versiunea"
 
 #: osinfo/osinfo_product.c:209
 msgid "Codename"
-msgstr "Nom de code"
+msgstr "Nume în cod"
 
 #: osinfo/osinfo_product.c:221
 msgid "URI of the logo"
-msgstr "URI du logo"
+msgstr "Adresa URI a logo-ului"
 
 #: osinfo/osinfo_resources.c:173
 msgid "CPU frequency in hertz (Hz)"
-msgstr "Fréquence de la CPU (Hz)"
+msgstr "Frecvența procesorului în hertzi (Hz)"
 
 #: osinfo/osinfo_resources.c:187
 msgid "Number of CPUs"
-msgstr "Nombre de CPU"
+msgstr "Numărul de procesoare"
 
 #: osinfo/osinfo_resources.c:201
 msgid "Amount of Random Access Memory (RAM) in bytes"
-msgstr "Quantité de mémoire vive (RAM) en octets"
+msgstr "Cantitatea de memorie cu acces aleatoriu (RAM) în octeți"
 
 #: osinfo/osinfo_resources.c:215
 msgid "Amount of storage space in bytes"
-msgstr "Quantité de stockage en octets"
+msgstr "Dimensiunea spațiului de stocare în octeți"
 
 #: osinfo/osinfo_tree.c:319
 msgid "The URL to this tree"
-msgstr "URL pointant vers cet arbre"
+msgstr "Adresa URL către acest arbore"
 
 #: osinfo/osinfo_tree.c:355
 msgid "The path to the bootable ISO image"
-msgstr "Le chemin vers l’image ISO bootable"
+msgstr "Ruta către imaginea ISO"
 
 #: osinfo/osinfo_tree.c:367
 msgid "Whether the tree has treeinfo"
-msgstr "Si l’arbre possède treeinfo"
+msgstr "Dacă arborele are informații despre arbore (treeinfo)"
 
 #: osinfo/osinfo_tree.c:379
 msgid "The treeinfo family"
-msgstr "La famille treeinfo"
+msgstr "Familia treeinfo"
 
 #: osinfo/osinfo_tree.c:391
 msgid "The treeinfo variant"
-msgstr "La variante treeinfo"
+msgstr "Varianta treeinfo"
 
 #: osinfo/osinfo_tree.c:403
 msgid "The treeinfo version"
-msgstr "La version treeinfo"
+msgstr "Versiunea treeinfo"
 
 #: osinfo/osinfo_tree.c:415
 msgid "The treeinfo architecture"
-msgstr "L’architecture treeinfo"
+msgstr "Arhitectura treeinfo"
 
 #: osinfo/osinfo_tree.c:430
 msgid "Information about the operating system on this tree"
-msgstr "Informations au sujet du système d’exploitation sur cet arbre"
+msgstr "Informații despre sistemul de operare din acest arbore"
 
 #: osinfo/osinfo_tree.c:683
 msgid "Failed to load .treeinfo|treeinfo content: "
-msgstr "Impossible de charger le contenu .treeinfo|treeinfo : "
+msgstr "Nu s-a putut încărca conținutul .treeinfo|treeinfo: "
 
 #: osinfo/osinfo_tree.c:692 osinfo/osinfo_tree.c:782
 msgid "Failed to process keyinfo file: "
-msgstr "Impossible de traiter le fichier keyinfo : "
+msgstr "Nu s-a putut procesa fișierul keyinfo: "
 
 #: osinfo/osinfo_tree.c:732 osinfo/osinfo_tree.c:773
 msgid "Failed to load .treeinfo|treeinfo file: "
-msgstr "Impossible de charger le fichier .treeinfo|treeinfo : "
+msgstr "Nu s-a putut încărca fișierul .treeinfo|treeinfo: "
 
 #: osinfo/osinfo_tree.c:811
 msgid "URL protocol is not supported"
-msgstr "Le protocole d’URL n’est pas pris en charge"
+msgstr "Protocolul URL nu este acceptat"
 
 #: osinfo/osinfo_os_variant.c:106
 msgid "The name to this variant"
-msgstr "Nom de cette variante"
+msgstr "Numele acestei variante"
 
 #: tools/osinfo-detect.c:55 tools/osinfo-detect.c:76
 #, c-format
 msgid "Invalid value '%s'"
-msgstr "Valeur invalide « %s »"
+msgstr "Valoare nevalidă „%s”"
 
 #: tools/osinfo-detect.c:88
 msgid "Select the output format"
-msgstr "Sélectionnez le format de sortie"
+msgstr "Selectează formatul de ieșire"
 
 #: tools/osinfo-detect.c:89
 msgid "FORMAT"
@@ -523,11 +517,11 @@ msgstr "FORMAT"
 
 #: tools/osinfo-detect.c:92
 msgid "Select the type of what is being detected"
-msgstr "Sélectionnez le type de ce qui est détecté"
+msgstr "Selectează tipul elementului detectat"
 
 #: tools/osinfo-detect.c:93
 msgid "TYPE"
-msgstr "TYPE"
+msgstr "TIP"
 
 #: tools/osinfo-detect.c:98
 #, c-format
@@ -536,186 +530,191 @@ msgid ""
 "TYPE can be either '%s' (the default) for CD/DVD ISOs,\n"
 "or '%s' for install trees."
 msgstr ""
-"La seule valeur disponible pour le FORMAT est « %s », ce qui signifie texte "
-"brut.\n"
-"TYPE peut être soit « %s » (la valeur par défaut) pour les ISO de CD/DVD,\n"
-"ou « %s » pour installer des arbres."
+"Singura valoare disponibilă pentru FORMAT este „%s”, care înseamnă text "
+"simplu.\n"
+"TIP poate fi fie „%s” (implicit) pentru ISO-uri CD/DVD,\n"
+"fie „%s” pentru arbori de instalare."
 
 #: tools/osinfo-detect.c:105
 #, c-format
 msgid "Media is bootable.\n"
-msgstr "Le support est bootable.\n"
+msgstr "Suportul este capabil de a porni.\n"
 
 #: tools/osinfo-detect.c:107
 #, c-format
 msgid "Media is not bootable.\n"
-msgstr "Le support n’est pas bootable.\n"
+msgstr "Suportul nu este capabil de a porni.\n"
 
 #: tools/osinfo-detect.c:138
 #, c-format
 msgid "Media is an installer for OS '%s (%s)'\n"
-msgstr "Le média est un installeur pour OS « %s (%s) »\n"
+msgstr ""
+"Conținutul media este un program de instalare pentru sistemul de operare „%s "
+"(%s)”.\n"
 
 #: tools/osinfo-detect.c:140
 #, c-format
 msgid "Media is live media for OS '%s (%s)'\n"
-msgstr "Le média est un média live pour OS « %s (%s) »\n"
+msgstr ""
+"Conținutul media este o imagine „live” pentru sistemul de operare „%s (%s)"
+"”.\n"
 
 #: tools/osinfo-detect.c:145
 #, c-format
 msgid "Available OS variants on media:\n"
-msgstr "Variantes de système d’exploitation disponibles sur ce média :\n"
+msgstr "Variante de sistem de operare disponibile pe suportul media:\n"
 
 #: tools/osinfo-detect.c:187
 #, c-format
 msgid "Tree is an installer for OS '%s (%s)'\n"
-msgstr "L’arbre est un installeur pour OS « %s (%s) »\n"
+msgstr ""
+"Arborele este un program de instalare pentru sistemul de operare „%s (%s)”.\n"
 
 #: tools/osinfo-detect.c:192
 #, c-format
 msgid "Available OS variants on tree:\n"
-msgstr "Variantes de système d’exploitation disponibles sur l’arbre :\n"
+msgstr "Variante de sistem de operare disponibile în arbore:\n"
 
 #: tools/osinfo-detect.c:220
 msgid "- Detect if media is bootable and the relevant OS and distribution."
 msgstr ""
-"- Détecter si le média est bootable ainsi que le système d’exploitation et "
-"la distribution."
+"- Detectează dacă suportul media este apt de a fi pornit, precum și sistemul "
+"de operare și distribuția disponibile."
 
 #: tools/osinfo-detect.c:229 tools/osinfo-query.c:412
 #, c-format
 msgid "Error while parsing commandline options: %s\n"
-msgstr "Erreur lors de l’analyse des options en ligne de commande : %s\n"
+msgstr "Eroare în timpul analizării opțiunilor liniei de comandă: %s\n"
 
 #: tools/osinfo-detect.c:247 tools/osinfo-install-script.c:424
 #: tools/osinfo-query.c:428
 #, c-format
 msgid "Error loading OS data: %s\n"
-msgstr "Erreur lors du chargement des données du système d’exploitation : %s\n"
+msgstr "Eroare la încărcarea datelor sistemului de operare: %s\n"
 
 #: tools/osinfo-detect.c:263
 #, c-format
 msgid "Error parsing media: %s\n"
-msgstr "Erreur lors de l’analyse du média : %s\n"
+msgstr "Eroare la analizarea suportului media: %s\n"
 
 #: tools/osinfo-detect.c:279
 #, c-format
 msgid "Error parsing installer tree: %s\n"
-msgstr "Erreur lors de l’analyse de l’arbre : %s\n"
+msgstr "Eroare la analizarea arborelui instalatorului: %s\n"
 
 #: tools/osinfo-install-script.c:76
 #, c-format
 msgid "Expected configuration key=value"
-msgstr "Configuration attendue du type clé=valeur"
+msgstr "Configurație așteptată de tip cheie=valoare"
 
 #: tools/osinfo-install-script.c:141
 msgid "Install script profile"
-msgstr "Profil de script d’installation"
+msgstr "Profilul scriptului de instalare"
 
 #: tools/osinfo-install-script.c:143
 msgid "Install script output directory"
-msgstr "Répertoire de sortie du script d’installation"
+msgstr "Directorul de ieșire al scriptului de instalare"
 
 #: tools/osinfo-install-script.c:145
 msgid "The output filename prefix"
-msgstr "Le préfixe des fichiers de sortie"
+msgstr "Prefixul numelui fișierului de ieșire"
 
 #: tools/osinfo-install-script.c:147
 msgid "The installation source to be used with the script"
-msgstr "La source d’installation à utiliser avec le script"
+msgstr "Sursa de instalare care va fi utilizată cu scriptul"
 
 #: tools/osinfo-install-script.c:150
 msgid "Set configuration parameter"
-msgstr "Définir les paramètres de configuration"
+msgstr "Definiți parametrul de configurare"
 
 #: tools/osinfo-install-script.c:153
 msgid "Set configuration parameters"
-msgstr "Définir les paramètres de configuration"
+msgstr "Definiți parametrii de configurare"
 
 #: tools/osinfo-install-script.c:155
 msgid "List configuration parameters"
-msgstr "Lister les paramètres de configuration"
+msgstr "Listează parametrii de configurare"
 
 #: tools/osinfo-install-script.c:157
 msgid "List install script profiles"
-msgstr "Lister les profils de scripts d’installation"
+msgstr "Listează profilele scriptului de instalare"
 
 #: tools/osinfo-install-script.c:159
 msgid "List supported injection methods"
-msgstr "Lister les méthodes d’injection disponibles"
+msgstr "Listează metodele de injectare acceptate"
 
 #: tools/osinfo-install-script.c:161
 msgid "Do not display output filenames"
-msgstr "Ne pas afficher les noms des fichiers de sortie"
+msgstr "Nu afișează numele fișierelor de ieșire"
 
 #: tools/osinfo-install-script.c:218
 #, c-format
 msgid "No install script for profile '%s' and OS '%s'"
 msgstr ""
-"Pas de script d’installation pour le profil « %s » et le système "
-"d’exploitation « %s »"
+"Nu există niciun script de instalare pentru profilul „%s” și sistemul de "
+"operare „%s”"
 
 #: tools/osinfo-install-script.c:234
 msgid "required"
-msgstr "requis"
+msgstr "cerut"
 
 #: tools/osinfo-install-script.c:234
 msgid "optional"
-msgstr "optionnel"
+msgstr "opțional"
 
 #: tools/osinfo-install-script.c:320
 #, c-format
 msgid "No install script for profile '%s' and OS '%s'\n"
 msgstr ""
-"Pas de script d’installation pour le profil « %s » et le système "
-"d’exploitation « %s »\n"
+"Nu există niciun script de instalare pentru profilul „%s” și sistemul de "
+"operare „%s”\n"
 
 #: tools/osinfo-install-script.c:356
 #, c-format
 msgid "Unable to generate install script: %s\n"
-msgstr "Impossible de créer le script d’installation : %s\n"
+msgstr "Nu se poate genera scriptul de instalare: %s\n"
 
 #: tools/osinfo-install-script.c:393
 msgid "- Generate an OS install script"
-msgstr "- Créer un script d’installation du système d’exploitation"
+msgstr "- Generează un script de instalare a sistemului de operare"
 
 #: tools/osinfo-install-script.c:396
 #, c-format
 msgid "Error while parsing options: %s\n"
-msgstr "Erreur lors de l’analyse des options : %s\n"
+msgstr "Eroare în timpul analizării opțiunilor: %s\n"
 
 #: tools/osinfo-install-script.c:414
 msgid ""
 "Only one of --list-profile, --list-config and --list-injection-methods can "
 "be requested"
 msgstr ""
-"--list-profile, --list-config et --list-injection-methods ne peuvent pas "
-"être utilisés simultanément"
+"Doar una dintre opțiunile „--list-profile”, „--list-config” și „--list-"
+"injection-methods” poate fi specificată."
 
 #: tools/osinfo-install-script.c:443
 #, c-format
 msgid "Error finding OS: %s\n"
-msgstr "Erreur lors de la recherche du système d’exploitation : %s\n"
+msgstr "Eroare la căutarea sistemului de operare: %s\n"
 
 #: tools/osinfo-query.c:57
 msgid "Family"
-msgstr "Famille"
+msgstr "Familia"
 
 #: tools/osinfo-query.c:59
 msgid "Distro"
-msgstr "Distribution"
+msgstr "Distribuția"
 
 #: tools/osinfo-query.c:63 tools/osinfo-query.c:85
 msgid "Release date"
-msgstr "Date de publication"
+msgstr "Data publicării"
 
 #: tools/osinfo-query.c:65 tools/osinfo-query.c:87
 msgid "End of life"
-msgstr "Fin de vie"
+msgstr "Sfârșitul vieții utile"
 
 #: tools/osinfo-query.c:67 tools/osinfo-query.c:89
 msgid "Code name"
-msgstr "Nom de code"
+msgstr "Numele în cod"
 
 #: tools/osinfo-query.c:69 tools/osinfo-query.c:91 tools/osinfo-query.c:111
 #: tools/osinfo-query.c:117
@@ -724,80 +723,65 @@ msgstr "ID"
 
 #: tools/osinfo-query.c:71
 msgid "Release status"
-msgstr "État de la publication"
+msgstr "Starea publicării"
 
 #: tools/osinfo-query.c:99
 msgid "Vendor ID"
-msgstr "ID de fournisseur"
+msgstr "ID furnizor"
 
 #: tools/osinfo-query.c:101
 msgid "Product"
-msgstr "Produit"
+msgstr "Produs"
 
 #: tools/osinfo-query.c:103
 msgid "Product ID"
-msgstr "ID Produit"
+msgstr "ID produs"
 
 #: tools/osinfo-query.c:107
 msgid "Class"
-msgstr "Classe"
+msgstr "Clasa"
 
 #: tools/osinfo-query.c:109
 msgid "Bus"
-msgstr "Bus"
+msgstr "Magistrală"
 
 #: tools/osinfo-query.c:149 tools/osinfo-query.c:191
 #, c-format
 msgid "Unknown property name %s"
-msgstr "Nom de propriété inconnu %s"
+msgstr "Nume de proprietate necunoscut %s"
 
 #: tools/osinfo-query.c:178
 msgid "Syntax error in condition, expecting KEY=VALUE"
-msgstr "Erreur de syntaxe dans la condition, CLÉ=VALEUR est attendu"
+msgstr "Eroare de sintaxă în condiție, se aștepta CHEIE=VALOARE"
 
 #: tools/osinfo-query.c:396
 msgid "Sort column"
-msgstr "Colonne de tri"
+msgstr "Sortează coloana"
 
 #: tools/osinfo-query.c:398
 msgid "Display fields"
-msgstr "Afficher les champs"
+msgstr "Afișează câmpurile"
 
 #: tools/osinfo-query.c:407
 msgid "- Query the OS info database"
-msgstr "- Interroger la base de données des systèmes d’exploitation"
+msgstr "- Consultarea bazei de date cu informații despre sistemul de operare"
 
 #: tools/osinfo-query.c:419
 #, c-format
 msgid "Missing data type parameter\n"
-msgstr "Paramètre type de données manquant\n"
+msgstr "Parametru de tip date lipsă\n"
 
 #: tools/osinfo-query.c:447
 #, c-format
 msgid "Unknown type '%s' requested\n"
-msgstr "Type demandé « %s » inconnu\n"
+msgstr "Tip necunoscut „%s” solicitat\n"
 
 #: tools/osinfo-query.c:452
 #, c-format
 msgid "Unable to construct filter: %s\n"
-msgstr "Impossible de construire le filtre : %s\n"
+msgstr "Nu se poate construi filtrul: %s\n"
 
 #: tools/osinfo-query.c:457
 #, c-format
 msgid "Unable to set field visibility: %s\n"
-msgstr "Impossible de définir la visiblité du champ :%s\n"
-
-#~ msgid "Output format. Default: plain"
-#~ msgstr "Format de sortie. Par défaut : plain"
-
-#~ msgid "plain."
-#~ msgstr "simple."
-
-#~ msgid "The type to be used. Default: media"
-#~ msgstr "Le type à utiliser. Par défaut : media"
-
-#~ msgid "media|tree."
-#~ msgstr "média|arbre."
-
-#~ msgid "The path to the inirtd image"
-#~ msgstr "Le chemin vers l’image initrd"
+msgstr "Nu se poate defini vizibilitatea câmpului: %s\n"

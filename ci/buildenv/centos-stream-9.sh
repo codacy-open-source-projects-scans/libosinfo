@@ -5,41 +5,41 @@
 # https://gitlab.com/libvirt/libvirt-ci
 
 function install_buildenv() {
-    dnf distro-sync -y
-    dnf install 'dnf-command(config-manager)' -y
-    dnf config-manager --set-enabled -y crb
-    dnf install -y epel-release
-    dnf install -y epel-next-release
-    dnf install -y \
-        ca-certificates \
-        ccache \
-        check-devel \
-        gcc \
-        gettext \
-        git \
-        glib2-devel \
-        glibc-devel \
-        glibc-langpack-en \
-        gobject-introspection-devel \
-        gtk-doc \
-        hwdata \
-        libsoup-devel \
-        libxml2 \
-        libxml2-devel \
-        libxslt-devel \
-        make \
-        meson \
-        ninja-build \
-        osinfo-db-tools \
-        pkgconfig \
-        python3 \
-        python3-lxml \
-        python3-pytest \
-        python3-requests \
-        rpm-build \
-        vala \
-        wget \
-        xz
+    dnf --quiet distro-sync -y
+    dnf --quiet install 'dnf-command(config-manager)' -y
+    dnf --quiet config-manager --set-enabled -y crb
+    dnf --quiet install -y epel-release
+    dnf --quiet install -y epel-next-release
+    dnf --quiet install -y \
+                ca-certificates \
+                ccache \
+                check-devel \
+                gcc \
+                gettext \
+                git \
+                glib2-devel \
+                glibc-devel \
+                glibc-langpack-en \
+                gobject-introspection-devel \
+                gtk-doc \
+                hwdata \
+                libsoup-devel \
+                libxml2 \
+                libxml2-devel \
+                libxslt-devel \
+                make \
+                meson \
+                ninja-build \
+                osinfo-db-tools \
+                pkgconfig \
+                python3 \
+                python3-lxml \
+                python3-pytest \
+                python3-requests \
+                rpm-build \
+                vala \
+                wget \
+                xz
     rm -f /usr/lib*/python3*/EXTERNALLY-MANAGED
     rpm -qa | sort > /packages.txt
     mkdir -p /usr/libexec/ccache-wrappers

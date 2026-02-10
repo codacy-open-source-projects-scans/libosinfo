@@ -19,7 +19,7 @@ function install_buildenv() {
         gtk-doc \
         hwids-pci \
         hwids-usb \
-        libsoup-dev \
+        libsoup3-dev \
         libxml2-dev \
         libxml2-utils \
         libxslt-dev \
