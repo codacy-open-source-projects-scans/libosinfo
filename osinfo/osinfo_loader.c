@@ -1350,7 +1350,9 @@ static OsinfoFirmware *osinfo_loader_firmware(OsinfoLoader *loader,
     gchar *arch = (gchar *)xmlGetProp(root, BAD_CAST "arch");
     gchar *type = (gchar *)xmlGetProp(root, BAD_CAST "type");
     gchar *supported = (gchar *)xmlGetProp(root, BAD_CAST "supported");
+    gchar *recommended = (gchar *)xmlGetProp(root, BAD_CAST "recommended");
     gboolean is_supported = TRUE;
+    gboolean is_recommended = FALSE;
 
     OsinfoFirmware *firmware = osinfo_firmware_new(id, arch, type);
     xmlFree(arch);
@@ -1361,9 +1363,18 @@ static OsinfoFirmware *osinfo_loader_firmware(OsinfoLoader *loader,
         xmlFree(supported);
     }
 
+    if (recommended != NULL) {
+        is_recommended = g_str_equal(recommended, "true");
+        xmlFree(recommended);
+    }
+
     osinfo_entity_set_param_boolean(OSINFO_ENTITY(firmware),
                                     OSINFO_FIRMWARE_PROP_SUPPORTED,
                                     is_supported);
+
+    osinfo_entity_set_param_boolean(OSINFO_ENTITY(firmware),
+                                    OSINFO_FIRMWARE_PROP_RECOMMENDED,
+                                    is_recommended);
 
     return firmware;
 }

@@ -36,8 +36,10 @@ OSINFO_DECLARE_TYPE_WITH_PRIVATE_AND_CLASS(OsinfoFirmware,
 #define OSINFO_FIRMWARE_PROP_ARCHITECTURE   "architecture"
 #define OSINFO_FIRMWARE_PROP_TYPE           "type"
 #define OSINFO_FIRMWARE_PROP_SUPPORTED      "supported"
+#define OSINFO_FIRMWARE_PROP_RECOMMENDED    "recommended"
 
 OsinfoFirmware *osinfo_firmware_new(const gchar *id, const gchar *architecture, const gchar *type);
 const gchar *osinfo_firmware_get_architecture(OsinfoFirmware *firmware);
 const gchar *osinfo_firmware_get_firmware_type(OsinfoFirmware *firmware);
 gboolean osinfo_firmware_is_supported(OsinfoFirmware *firmware);
+gboolean osinfo_firmware_is_recommended(OsinfoFirmware *firmware);

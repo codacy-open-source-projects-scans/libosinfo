@@ -214,3 +214,19 @@ gboolean osinfo_firmware_is_supported(OsinfoFirmware *firmware)
     return osinfo_entity_get_param_value_boolean(OSINFO_ENTITY(firmware),
                                                  OSINFO_FIRMWARE_PROP_SUPPORTED);
 }
+
+/**
+ * osinfo_firmware_is_recommended:
+ * @firmware: an #OsinfoFirmware instance
+ *
+ * Whether the @firmware is recommended or not
+ *
+ * Returns: TRUE if recommended, FALSE otherwise.
+ *
+ * Since: 1.13.0
+ */
+gboolean osinfo_firmware_is_recommended(OsinfoFirmware *firmware)
+{
+    return osinfo_entity_get_param_value_boolean(OSINFO_ENTITY(firmware),
+                                         OSINFO_FIRMWARE_PROP_RECOMMENDED);
+}
