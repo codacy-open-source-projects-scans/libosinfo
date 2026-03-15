@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the libosinfo package.
 # simmon <simmon@nplob.com>, 2021.
 # Seong-ho Cho <darkcircle.0426@gmail.com>, 2021, 2022, 2023.
-# 김인수 <simmon@nplob.com>, 2022, 2023.
+# 김인수 <simmon@nplob.com>, 2022, 2023, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: libosinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-04 17:27+0200\n"
-"PO-Revision-Date: 2023-07-29 17:21+0000\n"
+"PO-Revision-Date: 2026-03-06 18:58+0000\n"
 "Last-Translator: 김인수 <simmon@nplob.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
 "libosinfo/libosinfo/ko/>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.18.2\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #: osinfo/osinfo_avatar_format.c:96
 msgid "The allowed mime-types for the avatar"
-msgstr "아바타에 허용하는 MIME 형식"
+msgstr "아바타을 위한 허용된 mime-유형"
 
 #: osinfo/osinfo_avatar_format.c:107
 msgid "The required width (in pixels) of the avatar"
@@ -202,39 +202,39 @@ msgstr "예상되는 텍스트 노드 속성 값"
 
 #: osinfo/osinfo_loader.c:605
 msgid "Missing device id property"
-msgstr "장치 ID 속성 빠짐"
+msgstr "장치 id 속성 빠짐"
 
 #: osinfo/osinfo_loader.c:644
 msgid "Missing device link id property"
-msgstr "장치 연결 ID 속성 빠짐"
+msgstr "장치 연결 id 속성 빠짐"
 
 #: osinfo/osinfo_loader.c:705
 msgid "Missing product upgrades id property"
-msgstr "제품 업그레이드 ID 속성 빠짐"
+msgstr "제품 향상 id 속성 빠짐"
 
 #: osinfo/osinfo_loader.c:789
 msgid "Missing platform id property"
-msgstr "기반 ID 속성 빠짐"
+msgstr "기술기반 id 속성 빠짐"
 
 #: osinfo/osinfo_loader.c:828
 msgid "Missing deployment id property"
-msgstr "배포 ID 속성 빠짐"
+msgstr "배포 id 속성 빠짐"
 
 #: osinfo/osinfo_loader.c:838
 msgid "Missing deployment os id property"
-msgstr "배포 OS ID 속성 빠짐"
+msgstr "배포 os id 속성 빠짐"
 
 #: osinfo/osinfo_loader.c:848
 msgid "Missing deployment platform id property"
-msgstr "배포 기반 ID 속성 빠짐"
+msgstr "배포 기술기반 id 속성 빠짐"
 
 #: osinfo/osinfo_loader.c:887 osinfo/osinfo_loader.c:1637
 msgid "Missing os id property"
-msgstr "OS ID 속성 빠짐"
+msgstr "os id 속성 빠짐"
 
 #: osinfo/osinfo_loader.c:1012
 msgid "Missing install script id property"
-msgstr "설치 스크립트 ID 속성 빠짐"
+msgstr "설치 스크립트 id 속성 빠짐"
 
 #: osinfo/osinfo_loader.c:1246
 msgid "Missing Media install script property"

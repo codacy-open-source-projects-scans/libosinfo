@@ -1,13 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the libosinfo package.
-# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022, 2023.
+# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022, 2023, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: libosinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-04 17:27+0200\n"
-"PO-Revision-Date: 2023-06-28 18:20+0000\n"
+"PO-Revision-Date: 2026-03-03 20:58+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://translate.fedoraproject.org/projects/"
 "libosinfo/libosinfo/ka/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.18.1\n"
+"X-Generator: Weblate 5.16.1\n"
 
 #: osinfo/osinfo_avatar_format.c:96
 msgid "The allowed mime-types for the avatar"
@@ -220,7 +220,7 @@ msgstr "გაშლის id-ის თვისება ვერ ვიპ�
 
 #: osinfo/osinfo_loader.c:838
 msgid "Missing deployment os id property"
-msgstr "გასაშლელი ოს-ის ID თვისება ვერ ვიპოვე"
+msgstr "გასაშლელი ოს-ის id თვისება ვერ ვიპოვე"
 
 #: osinfo/osinfo_loader.c:848
 msgid "Missing deployment platform id property"

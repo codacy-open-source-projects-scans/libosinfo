@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libosinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-04 17:27+0200\n"
-"PO-Revision-Date: 2026-01-20 12:58+0000\n"
+"PO-Revision-Date: 2026-03-02 19:58+0000\n"
 "Last-Translator: Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>\n"
 "Language-Team: Romanian <https://translate.fedoraproject.org/projects/"
 "libosinfo/libosinfo/ro/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Weblate 5.15.2\n"
+"X-Generator: Weblate 5.16.1\n"
 
 #: osinfo/osinfo_avatar_format.c:96
 msgid "The allowed mime-types for the avatar"
@@ -202,40 +202,40 @@ msgstr "Se aștepta valoarea atributului nodului text"
 
 #: osinfo/osinfo_loader.c:605
 msgid "Missing device id property"
-msgstr "Proprietatea ID-ului dispozitivului lipsește"
+msgstr "Proprietatea id a dispozitivului lipsește"
 
 #: osinfo/osinfo_loader.c:644
 msgid "Missing device link id property"
-msgstr "Proprietatea ID-ului legăturii dispozitivului lipsește"
+msgstr "Proprietatea id a legăturii dispozitivului lipsește"
 
 #: osinfo/osinfo_loader.c:705
 msgid "Missing product upgrades id property"
-msgstr "Proprietatea ID-ului actualizării produsului lipsește"
+msgstr "Proprietatea id a actualizării produsului lipsește"
 
 #: osinfo/osinfo_loader.c:789
 msgid "Missing platform id property"
-msgstr "Proprietatea ID-ului platformei lipsește"
+msgstr "Proprietatea id a platformei lipsește"
 
 #: osinfo/osinfo_loader.c:828
 msgid "Missing deployment id property"
-msgstr "Proprietatea ID-ului de implementare lipsește"
+msgstr "Proprietatea id a implementării lipsește"
 
 #: osinfo/osinfo_loader.c:838
 msgid "Missing deployment os id property"
 msgstr ""
-"Proprietatea ID-ului SO (sistemului de operare) de implementare lipsește"
+"Proprietatea id a SO-ului (sistemului de operare) de implementare lipsește"
 
 #: osinfo/osinfo_loader.c:848
 msgid "Missing deployment platform id property"
-msgstr "Proprietatea ID-ului platformei de implementare lipsește"
+msgstr "Proprietatea id a platformei de implementare lipsește"
 
 #: osinfo/osinfo_loader.c:887 osinfo/osinfo_loader.c:1637
 msgid "Missing os id property"
-msgstr "Proprietatea ID-ului SO (sistemului de operare) lipsește"
+msgstr "Proprietatea id a SO-ului (sistemului de operare) lipsește"
 
 #: osinfo/osinfo_loader.c:1012
 msgid "Missing install script id property"
-msgstr "Proprietatea ID-ului scriptului de instalare lipsește"
+msgstr "Proprietatea id a scriptului de instalare lipsește"
 
 #: osinfo/osinfo_loader.c:1246
 msgid "Missing Media install script property"
