@@ -26,7 +26,7 @@ BuildRequires: libsoup-devel
 %endif
 BuildRequires: vala
 BuildRequires: /usr/bin/pod2man
-BuildRequires: hwdata
+BuildRequires: hwdata-devel
 BuildRequires: gobject-introspection-devel
 BuildRequires: osinfo-db
 BuildRequires: git

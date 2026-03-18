@@ -2,7 +2,7 @@ project(
     'libosinfo', 'c',
     version: '1.13.0',
     license: 'LGPLv2+',
-    meson_version: '>= 0.49.0',
+    meson_version: '>= 0.51.0',
     default_options: [
         'buildtype=debugoptimized',
         'c_std=gnu99',
@@ -258,79 +258,71 @@ foreach cflag: libosinfo_check_cflags
   endif
 endforeach
 
-pci_ids_path = get_option('with-pci-ids-path')
-if pci_ids_path == ''
-    pci_id_files = [
-        '/usr/share/pci.ids',
-        '/usr/share/misc/pci.ids',
-        '/usr/share/hwdata/pci.ids',
-        '/usr/local/share/pciids/pci.ids',
-    ]
+hw_ids = [
+    {
+        'name': 'pci',
+        'files': [
+            '/usr/share/pci.ids',
+            '/usr/share/misc/pci.ids',
+            '/usr/share/hwdata/pci.ids',
+            '/usr/local/share/pciids/pci.ids',
+        ],
+    },
+    {
+        'name': 'usb',
+        'files': [
+            '/usr/share/usb.ids',
+            '/usr/share/misc/usb.ids',
+            '/usr/share/hwdata/usb.ids',
+            '/usr/local/share/usbids/usb.ids',
+        ]
+    },
+]
 
-    install_file = meson.is_cross_build()
+hwdata_dep = dependency('hwdata', disabler: true, required: false)
+hwdata_dir = hwdata_dep.get_variable(pkgconfig: 'pkgdatadir', default_value: '')
 
-    foreach file: pci_id_files
-        if run_command('[', '-f', file, ']', check: false).returncode() == 0
-            pci_ids_path = file
-            break
-        endif
-    endforeach
+foreach ids: hw_ids
+    name = ids['name']
+    ids_files = ids['files']
+    file_name = '@0@.ids'.format(name)
 
-    if pci_ids_path == ''
-        download = find_program('build-aux/download_pci_ids')
-        if download.found()
-            run_command(download, check: true)
-            file = join_paths(meson.build_root(), 'pci.ids')
-            install_file = true
-        endif
+    ids_path = get_option('with-@0@-ids-path'.format(name))
+
+    if ids_path == '' and hwdata_dir != ''
+        ids_path = join_paths(hwdata_dir, file_name)
     endif
 
-    if install_file
-        install_data(file, install_dir: libosinfo_pkgdatadir)
-        pci_ids_path = join_paths(libosinfo_pkgdatadir, 'pci.ids')
-    endif
-endif
-if pci_ids_path != ''
-    libosinfo_cflags += ['-DPCI_IDS="@0@"'.format(pci_ids_path)]
-    message('Location of pci.ids: "@0@"'.format(pci_ids_path))
-endif
+    if ids_path == ''
+        install_file = meson.is_cross_build()
 
-usb_ids_path = get_option('with-usb-ids-path')
-if usb_ids_path == ''
-    usb_id_files = [
-        '/usr/share/usb.ids',
-        '/usr/share/misc/usb.ids',
-        '/usr/share/hwdata/usb.ids',
-        '/usr/local/share/usbids/usb.ids',
-    ]
+        foreach file: ids_files
+            if run_command('[', '-f', file, ']', check: false).returncode() == 0
+                ids_path = file
+                break
+            endif
+        endforeach
 
-    install_file = meson.is_cross_build()
-
-    foreach file: usb_id_files
-        if run_command('[', '-f', file, ']', check: false).returncode() == 0
-            usb_ids_path = file
-            break
+        if ids_path == ''
+            download = find_program('build-aux/download_@0@_ids'.format(name))
+            if download.found()
+                run_command(download, check: true)
+                file = join_paths(meson.build_root(), file_name)
+                install_file = true
+            endif
         endif
-    endforeach
 
-    if usb_ids_path == ''
-        download = find_program('build-aux/download_usb_ids')
-        if download.found()
-            run_command(download, check: true)
-            file = join_paths(meson.build_root(), 'usb.ids')
-            install_file = true
+        if install_file
+            install_data(file, install_dir: libosinfo_pkgdatadir)
+            ids_path = join_paths(libosinfo_pkgdatadir, file_name)
         endif
     endif
 
-    if install_file
-        install_data(file, install_dir: libosinfo_pkgdatadir)
-        usb_ids_path = join_paths(libosinfo_pkgdatadir, 'usb.ids')
+    if ids_path != ''
+        libosinfo_cflags += ['-D@0@_IDS="@1@"'.format(name.to_upper(), ids_path)]
+        message('Location of @0@: "@1@"'.format(name, ids_path))
     endif
-endif
-if usb_ids_path != ''
-    libosinfo_cflags += ['-DUSB_IDS="@0@"'.format(usb_ids_path)]
-    message('Location of usb.ids: "@0@"'.format(usb_ids_path))
-endif
+endforeach
 
 libosinfo_version = meson.project_version()
 libosinfo_major_version = libosinfo_version.split('.')[0].to_int()
