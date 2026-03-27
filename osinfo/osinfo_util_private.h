@@ -21,10 +21,24 @@
 #pragma once
 
 #include <glib.h>
+#include <libsoup/soup.h>
 
 gboolean osinfo_util_requires_soup(const gchar *location);
 
 #if SOUP_MAJOR_VERSION < 3
 # define soup_message_get_status(message) message->status_code
 # define soup_message_get_response_headers(message) message->response_headers
+
+void
+soup_session_send_and_read_async(SoupSession *session,
+                                 SoupMessage *message,
+                                 int priority,
+                                 GCancellable *cancellable,
+                                 GAsyncReadyCallback callback,
+                                 gpointer user_data);
+
+GBytes *
+soup_session_send_and_read_finish(SoupSession *session,
+                                  GAsyncResult *result,
+                                  GError **error);
 #endif

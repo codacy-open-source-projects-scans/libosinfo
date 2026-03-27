@@ -32,7 +32,6 @@ struct _CreateFromLocationAsyncData {
     SoupMessage *message;
     GFile *file;
 
-    gchar *content;
     gchar *location;
     gchar *treeinfo;
 
@@ -667,56 +666,23 @@ static void
 osinfo_tree_create_from_location_async_helper(CreateFromLocationAsyncData *data,
                                               const gchar *treeinfo);
 
-static void on_content_read(GObject *source,
-                            GAsyncResult *res,
-                            gpointer user_data)
-{
-    CreateFromLocationAsyncData *data;
-    gsize length = 0;
-    GError *error = NULL;
-    OsinfoTree *ret;
-
-    data = (CreateFromLocationAsyncData *)user_data;
-
-    if (!g_input_stream_read_all_finish(G_INPUT_STREAM(source),
-                                        res,
-                                        &length,
-                                        &error)) {
-        g_prefix_error(&error, _("Failed to load .treeinfo|treeinfo content: "));
-        g_task_return_error(data->res, error);
-        goto cleanup;
-    }
-
-    if (!(ret = load_keyinfo(data->location,
-                             data->content,
-                             length,
-                             &error))) {
-        g_prefix_error(&error, _("Failed to process keyinfo file: "));
-        g_task_return_error(data->res, error);
-        goto cleanup;
-    }
-
-    g_task_return_pointer(data->res, ret, g_object_unref);
-
- cleanup:
-    create_from_location_async_data_free(data);
-}
-
 static void on_soup_location_read(GObject *source,
                                   GAsyncResult *res,
                                   gpointer user_data)
 {
     CreateFromLocationAsyncData *data;
     GError *error = NULL;
-    GInputStream *stream;
-    goffset content_size;
+    g_autoptr(GBytes) bytes = NULL;
+    const gchar *content = NULL;
+    gsize length = 0;
+    OsinfoTree *ret = NULL;
 
     data = (CreateFromLocationAsyncData *)user_data;
 
-    stream = soup_session_send_finish(SOUP_SESSION(source),
-                                      res,
-                                      &error);
-    if (stream == NULL ||
+    bytes = soup_session_send_and_read_finish(SOUP_SESSION(source),
+                                              res,
+                                              &error);
+    if (bytes == NULL ||
         !SOUP_STATUS_IS_SUCCESSFUL(soup_message_get_status(data->message))) {
         /* It means no ".treeinfo" file has been found. Try again, this time
          * looking for a "treeinfo" file. */
@@ -737,16 +703,20 @@ static void on_soup_location_read(GObject *source,
         return;
     }
 
-    content_size = soup_message_headers_get_content_length(soup_message_get_response_headers(data->message));
-    data->content = g_malloc0(content_size);
+    content = g_bytes_get_data(bytes, &length);
 
-    g_input_stream_read_all_async(stream,
-                                  data->content,
-                                  content_size,
-                                  g_task_get_priority(data->res),
-                                  g_task_get_cancellable(data->res),
-                                  on_content_read,
-                                  data);
+    if (!(ret = load_keyinfo(data->location,
+                             content,
+                             length,
+                             &error))) {
+        g_prefix_error(&error, _("Failed to process keyinfo file: "));
+        g_task_return_error(data->res, error);
+        create_from_location_async_data_free(data);
+        return;
+    }
+
+    g_task_return_pointer(data->res, ret, g_object_unref);
+    create_from_location_async_data_free(data);
 }
 
 static void on_local_location_read(GObject *source,
@@ -831,14 +801,12 @@ osinfo_tree_create_from_location_async_helper(CreateFromLocationAsyncData *data,
         g_clear_object(&data->message);
         data->message = soup_message_new("GET", location);
 
-        soup_session_send_async(data->session,
-                                data->message,
-#if SOUP_MAJOR_VERSION > 2
-                                G_PRIORITY_DEFAULT,
-#endif
-                                g_task_get_cancellable(data->res),
-                                on_soup_location_read,
-                                data);
+        soup_session_send_and_read_async(data->session,
+                                         data->message,
+                                         G_PRIORITY_DEFAULT,
+                                         g_task_get_cancellable(data->res),
+                                         on_soup_location_read,
+                                         data);
     } else {
         g_clear_object(&data->file);
         data->file = g_file_new_for_uri(location);
